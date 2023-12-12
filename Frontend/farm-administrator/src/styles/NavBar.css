@@ -1,0 +1,21 @@
+.navbar {
+  background-color: #294936; /* Puedes cambiar este color según tu paleta de colores */
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  border: none;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  margin: 0 15px;
+  font-size: 1.2em;
+}
