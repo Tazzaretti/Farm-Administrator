@@ -1,0 +1,41 @@
+.register-container {
+ width: 300px;
+ padding: 16px;
+ background-color: white;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ margin: 0 auto;
+ margin-top: 100px;
+}
+
+.register-container label {
+ display: block;
+ margin-bottom: 5px;
+}
+
+.register-container input[type='email'],
+.register-container input[type='password'],
+.register-container input[type='name'],
+.register-container input[type='lastName'],
+.register-container input[type='telephone'] {
+ width: 100%;
+ padding: 8px;
+ margin-bottom: 15px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+}
+
+.register-container button[type='submit'] {
+ background-color: #4CAF50;
+ color: white;
+ padding: 8px 16px;
+ margin-top: 10px;
+ border: none;
+ cursor: pointer;
+ width: 100%;
+ border-radius: 4px;
+}
+
+.register-container button[type='submit']:hover {
+ background-color: #45a049;
+}

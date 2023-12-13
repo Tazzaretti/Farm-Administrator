@@ -1,12 +1,17 @@
 import React from 'react';
-import "../styles/NavBar.css";
-const NavBar = () => {
+import { Link } from 'react-router-dom';
+import '../styles/NavBar.css';
+
+const NavBar = ({ showLoginButton, showSignupButton, showPlotsButton }) => {
   return (
     <nav className="navbar">
-      <div className="logo">Admin Agro</div>
+      <Link to="/" className="logo">
+        Admin Agro
+      </Link>
       <div className="nav-links">
-        <a href="#"></a>
-        <a href="#"></a>
+        {showLoginButton && <a href="/login">Iniciar Sesión</a>}
+        {showSignupButton && <a href="/register">Registrarse</a>}
+        {showPlotsButton && <a href="/plots">Plots</a>}
         {/* Agrega más enlaces según sea necesario */}
       </div>
     </nav>
