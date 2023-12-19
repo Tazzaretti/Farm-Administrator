@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tomas\\Desktop\\Poyectos\\FarmAdministrator\\Data\\Data.csproj": {}
+    "C:\\Users\\tomia\\OneDrive\\Escritorio\\Farm-Administrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Data\\Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tomas\\Desktop\\Poyectos\\FarmAdministrator\\Data\\Data.csproj": {
+    "C:\\Users\\tomia\\OneDrive\\Escritorio\\Farm-Administrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tomas\\Desktop\\Poyectos\\FarmAdministrator\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\tomia\\OneDrive\\Escritorio\\Farm-Administrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\tomas\\Desktop\\Poyectos\\FarmAdministrator\\Data\\Data.csproj",
-        "packagesPath": "C:\\Users\\tomas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tomas\\Desktop\\Poyectos\\FarmAdministrator\\Data\\obj\\",
+        "projectPath": "C:\\Users\\tomia\\OneDrive\\Escritorio\\Farm-Administrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Data\\Data.csproj",
+        "packagesPath": "C:\\Users\\tomia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tomia\\OneDrive\\Escritorio\\Farm-Administrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tomia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
