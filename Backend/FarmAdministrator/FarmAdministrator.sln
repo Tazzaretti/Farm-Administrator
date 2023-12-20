@@ -5,11 +5,11 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmAdministrator", "FarmAdministrator\FarmAdministrator.csproj", "{E5D28DB6-AAD4-4E76-97B7-332ACF1D9484}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{B0E27581-8040-4C64-B76A-0BA95EB4B9C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{B0E27581-8040-4C64-B76A-0BA95EB4B9C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{F83CA4EA-52F4-49DC-A43E-8D63CBB335F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{F83CA4EA-52F4-49DC-A43E-8D63CBB335F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Implementations", "Implementations\Implementations.csproj", "{0715BB7D-8170-45B0-8C22-3980A1A07213}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Implementations\Services.csproj", "{0715BB7D-8170-45B0-8C22-3980A1A07213}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
