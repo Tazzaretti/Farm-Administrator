@@ -14,6 +14,7 @@ namespace FarmAdministrator
             builder.Services.AddScoped<IAdminService, AdminService>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IEmailService, EmailService>();
+            builder.Services.AddScoped<IPlotService, PlotService>();
             //builder.Services.AddScoped<ISubject, Subject>();
 
             //patron de diseno
@@ -22,6 +23,10 @@ namespace FarmAdministrator
             //REPOSITORIES
             builder.Services.AddScoped<IAdminRepository, AdminRepository>();
             builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IPlotRepository, PlotRepository>();
+            builder.Services.AddScoped<IApplicationRepository, ApplicationRepository>();
+            builder.Services.AddScoped<IHarvestRepository, HarvestRepository>();
+            builder.Services.AddScoped<IPlantingRepository, PlantingRepository>();
             //builder.Services.AddScoped<ISuscriptorRepository, SuscriptorRepository>();
 
 

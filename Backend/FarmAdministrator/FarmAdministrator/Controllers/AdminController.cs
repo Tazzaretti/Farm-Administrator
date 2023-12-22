@@ -1,13 +1,9 @@
-﻿using BolsaDeTrabajo.Data.Interfaces;
-using BolsaDeTrabajo.Model.DTOs;
-using BolsaDeTrabajo.Model.Models;
-using BolsaDeTrabajo.Service.Implementations;
-using BolsaDeTrabajo.Service.Interfaces;
+﻿using Data.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Models.DTOs;
+using Services.Interfaces;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
-namespace BolsaDeTrabjo.Api.Controllers
+namespace FarmAdministrator.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -99,7 +95,7 @@ namespace BolsaDeTrabjo.Api.Controllers
                 await _adminService.DeleteUser(id);
                 return Ok();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
 

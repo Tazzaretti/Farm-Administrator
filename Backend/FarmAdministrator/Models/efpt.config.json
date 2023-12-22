@@ -23,14 +23,6 @@
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[CropTypes]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[GroundTypes]",
-         "ObjectType": 0
-      },
-      {
          "Name": "[dbo].[Harvests]",
          "ObjectType": 0
       },
@@ -39,19 +31,7 @@
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[Plot_StateTypes]",
-         "ObjectType": 0
-      },
-      {
          "Name": "[dbo].[Plots]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[ProductTypes]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[RoleTypes]",
          "ObjectType": 0
       },
       {
@@ -60,10 +40,6 @@
       },
       {
          "Name": "[dbo].[Users]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[UserTypes]",
          "ObjectType": 0
       },
       {

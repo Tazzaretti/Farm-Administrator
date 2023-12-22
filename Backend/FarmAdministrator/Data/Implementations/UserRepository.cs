@@ -53,7 +53,7 @@ namespace Data.Implementations
         public async Task<List<UsersDTO>> GetAllUsers()
         {
             // Obtener todos los usuarios
-            List<Users> users = await _context.Users.Where(u => u.State == 1).ToListAsync();
+            List<Users> users = await _context.Users.Where(u => u.State == 0).ToListAsync();
 
             // Mapea la lista de usuarios a una lista de objetos UsuariopDTO.
             List<UsersDTO> results = users.Select(user => new UsersDTO
@@ -82,7 +82,7 @@ namespace Data.Implementations
                     Name = user.Name,
                     LastName = user.LastName,
                     UserType = user.UserType,
-                    UserRole = user.UserRole,
+                    UserRole = 1,
                     Phone = user.Phone,
                     Adress = user.Adress,
                 };

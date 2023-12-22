@@ -28,8 +28,6 @@ namespace Models.Models
         public DateTime? RegisterDate { get; set; }
         public int State { get; set; }
 
-        public virtual RoleTypes UserRoleNavigation { get; set; }
-        public virtual UserTypes UserTypeNavigation { get; set; }
         public virtual ICollection<Admins> Admins { get; set; }
         public virtual ICollection<Plots> Plots { get; set; }
         public virtual ICollection<Tokens> Tokens { get; set; }

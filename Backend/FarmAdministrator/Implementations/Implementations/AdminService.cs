@@ -25,14 +25,15 @@ namespace Services.Implementations
         {
             if (admin != null)
             {
-                UsersDTO usuario = await _usuarioRepository.GetUserById(admin.IdUser);
+                UsersDTO user = await _usuarioRepository.GetUserById(admin.IdUser);
 
                 UsersDTO modifiedUser = new UsersDTO()
                 {
-                    IdUser = usuario.IdUser,
-                    Email = usuario.Email,
-                    Password = usuario.Password,
-                    UserType = 3
+                    IdUser = user.IdUser,
+                    Email = user.Email,
+                    Password = user.Password,
+                    UserType = user.UserType,
+                    UserRole = 2
                 };
                 await _usuarioRepository.UpdateUser(modifiedUser);
 

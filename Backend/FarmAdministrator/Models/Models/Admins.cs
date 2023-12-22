@@ -11,7 +11,6 @@ namespace Models.Models
         public int IdUser { get; set; }
         public int AdminType { get; set; }
 
-        public virtual UserTypes AdminTypeNavigation { get; set; }
         public virtual Users IdUserNavigation { get; set; }
     }
 }

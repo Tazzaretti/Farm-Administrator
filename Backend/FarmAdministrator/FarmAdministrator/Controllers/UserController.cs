@@ -15,6 +15,23 @@ namespace FarmAdministrator.Controllers
             _userService = userService;
         }
 
+        [HttpPost]
+        [Route("CrearUsuario")]
+        public async Task<IActionResult> CreateNewUser([FromBody] UsersDTO user)
+        {
+            try
+            {
+                await _userService.CreateNewUser(user);
+
+                return CreatedAtAction(nameof(CreateNewUser), user);
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
+
+
         [HttpGet("{id}")]
         public async Task<ActionResult<UsersDTO>> GetById(int id)
         {

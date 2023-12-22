@@ -20,16 +20,10 @@ namespace Models.Models
 
         public virtual DbSet<Admins> Admins { get; set; }
         public virtual DbSet<Applications> Applications { get; set; }
-        public virtual DbSet<CropTypes> CropTypes { get; set; }
-        public virtual DbSet<GroundTypes> GroundTypes { get; set; }
         public virtual DbSet<Harvests> Harvests { get; set; }
         public virtual DbSet<Plantings> Plantings { get; set; }
-        public virtual DbSet<PlotStateTypes> PlotStateTypes { get; set; }
         public virtual DbSet<Plots> Plots { get; set; }
-        public virtual DbSet<ProductTypes> ProductTypes { get; set; }
-        public virtual DbSet<RoleTypes> RoleTypes { get; set; }
         public virtual DbSet<Tokens> Tokens { get; set; }
-        public virtual DbSet<UserTypes> UserTypes { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<Weather> Weather { get; set; }
 
@@ -42,12 +36,6 @@ namespace Models.Models
                 entity.Property(e => e.IdAdmin).HasColumnName("Id_Admin");
 
                 entity.Property(e => e.IdUser).HasColumnName("Id_User");
-
-                entity.HasOne(d => d.AdminTypeNavigation)
-                    .WithMany(p => p.Admins)
-                    .HasForeignKey(d => d.AdminType)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("Admins_RoleTypes");
 
                 entity.HasOne(d => d.IdUserNavigation)
                     .WithMany(p => p.Admins)
@@ -101,30 +89,6 @@ namespace Models.Models
                     .HasForeignKey(d => d.IdPlot)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Applications_Plots");
-            });
-
-            modelBuilder.Entity<CropTypes>(entity =>
-            {
-                entity.HasKey(e => e.IdCrop)
-                    .HasName("PK_Crops");
-
-                entity.Property(e => e.IdCrop).HasColumnName("id_crop");
-
-                entity.Property(e => e.CropType)
-                    .HasMaxLength(255)
-                    .HasColumnName("crop_type");
-            });
-
-            modelBuilder.Entity<GroundTypes>(entity =>
-            {
-                entity.HasKey(e => e.IdGroundType)
-                    .HasName("PK_Grounds");
-
-                entity.Property(e => e.IdGroundType).HasColumnName("id_ground_type");
-
-                entity.Property(e => e.GroundType)
-                    .HasMaxLength(255)
-                    .HasColumnName("ground_type");
             });
 
             modelBuilder.Entity<Harvests>(entity =>
@@ -211,31 +175,11 @@ namespace Models.Models
                     .HasColumnType("date")
                     .HasColumnName("start_date");
 
-                entity.HasOne(d => d.CropNavigation)
-                    .WithMany(p => p.Plantings)
-                    .HasForeignKey(d => d.Crop)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Plantings_Crops");
-
                 entity.HasOne(d => d.IdPlotNavigation)
                     .WithMany(p => p.Plantings)
                     .HasForeignKey(d => d.IdPlot)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Plantings_Plots");
-            });
-
-            modelBuilder.Entity<PlotStateTypes>(entity =>
-            {
-                entity.HasKey(e => e.IdState)
-                    .HasName("PK_Ground_Types");
-
-                entity.ToTable("Plot_StateTypes");
-
-                entity.Property(e => e.IdState).HasColumnName("id_state");
-
-                entity.Property(e => e.State)
-                    .HasMaxLength(255)
-                    .HasColumnName("state");
             });
 
             modelBuilder.Entity<Plots>(entity =>
@@ -264,47 +208,11 @@ namespace Models.Models
 
                 entity.Property(e => e.State).HasColumnName("state");
 
-                entity.HasOne(d => d.GroundTypeNavigation)
-                    .WithMany(p => p.Plots)
-                    .HasForeignKey(d => d.GroundType)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Plots_Grounds");
-
                 entity.HasOne(d => d.IdUserNavigation)
                     .WithMany(p => p.Plots)
                     .HasForeignKey(d => d.IdUser)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Plots_Users");
-
-                entity.HasOne(d => d.StateNavigation)
-                    .WithMany(p => p.Plots)
-                    .HasForeignKey(d => d.State)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Plots_States");
-            });
-
-            modelBuilder.Entity<ProductTypes>(entity =>
-            {
-                entity.HasKey(e => e.IdProductType)
-                    .HasName("PK_ProductType");
-
-                entity.Property(e => e.IdProductType).HasColumnName("id_product_type");
-
-                entity.Property(e => e.ProductType)
-                    .IsRequired()
-                    .HasMaxLength(255)
-                    .HasColumnName("product_type");
-            });
-
-            modelBuilder.Entity<RoleTypes>(entity =>
-            {
-                entity.HasKey(e => e.IdRoleType);
-
-                entity.Property(e => e.IdRoleType).HasColumnName("id_role_type");
-
-                entity.Property(e => e.RoleType)
-                    .HasMaxLength(50)
-                    .HasColumnName("role_type");
             });
 
             modelBuilder.Entity<Tokens>(entity =>
@@ -330,17 +238,6 @@ namespace Models.Models
                     .HasForeignKey(d => d.IdUser)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Tokens_Users");
-            });
-
-            modelBuilder.Entity<UserTypes>(entity =>
-            {
-                entity.HasKey(e => e.IdUserType);
-
-                entity.Property(e => e.IdUserType).HasColumnName("id_user_type");
-
-                entity.Property(e => e.UserType)
-                    .HasMaxLength(255)
-                    .HasColumnName("user_type");
             });
 
             modelBuilder.Entity<Users>(entity =>
@@ -385,18 +282,6 @@ namespace Models.Models
                 entity.Property(e => e.UserRole).HasColumnName("user_role");
 
                 entity.Property(e => e.UserType).HasColumnName("user_type");
-
-                entity.HasOne(d => d.UserRoleNavigation)
-                    .WithMany(p => p.Users)
-                    .HasForeignKey(d => d.UserRole)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Users_RoleTypes");
-
-                entity.HasOne(d => d.UserTypeNavigation)
-                    .WithMany(p => p.Users)
-                    .HasForeignKey(d => d.UserType)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Users_UserTypes");
             });
 
             modelBuilder.Entity<Weather>(entity =>
