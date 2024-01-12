@@ -14,7 +14,7 @@ namespace Data.Implementations
     {
         FarmAdministratorContext _context;
 
-        PlantingRepository(FarmAdministratorContext context)
+        public PlantingRepository(FarmAdministratorContext context)
         {
             _context = context;
         }
