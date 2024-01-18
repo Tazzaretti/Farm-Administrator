@@ -157,6 +157,7 @@ namespace Data.Implementations
                     Owner = plot.Owner,
                     Notes = plot.Notes,
                     State = plot.State,
+                    IdUser = plot.IdUser
                     // ...
                 })
                 .ToList();

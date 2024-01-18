@@ -49,9 +49,9 @@ builder.Services.AddAuthorization(options =>
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowLocalhost5173", builder =>
+    options.AddPolicy("AllowAnyOrigin", builder =>
     {
-        builder.WithOrigins("http://localhost:5173")
+        builder.AllowAnyOrigin()
                .AllowAnyHeader()
                .AllowAnyMethod();
     });
@@ -69,10 +69,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseCors("AllowLocalhost5173");
-
+app.UseCors("AllowAnyOrigin");
 app.MapControllers();
 
 app.Run();

@@ -36,7 +36,7 @@ namespace FarmAdministrator.Controllers
 
 
         [HttpDelete]
-        [Route("/DeletePlot")]
+        [Route("/DeletePlot/{id}")]
 
         public async Task<IActionResult> DeletePlot(int id)
         {
@@ -65,7 +65,7 @@ namespace FarmAdministrator.Controllers
 
 
         [HttpGet]
-        [Route("/UserPlots")]
+        [Route("/UserPlots/{id}")]
 
         public async Task<IActionResult> GetUserPlots(int id)
         {
@@ -105,7 +105,7 @@ namespace FarmAdministrator.Controllers
 
 
         [HttpGet]
-        [Route("GetPlotById")]
+        [Route("GetPlotById/{id}")]
         public async Task<IActionResult> GetPlotById(int id)
         {
             try

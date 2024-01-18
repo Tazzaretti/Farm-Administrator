@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tomia\\OneDrive\\Escritorio\\Farm-Administrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj": {}
+    "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tomia\\OneDrive\\Escritorio\\Farm-Administrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj": {
+    "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tomia\\OneDrive\\Escritorio\\Farm-Administrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\tomia\\OneDrive\\Escritorio\\Farm-Administrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\tomia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tomia\\OneDrive\\Escritorio\\Farm-Administrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\obj\\",
+        "projectPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\tomas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tomia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -41,7 +41,7 @@ namespace Services.Implementations
                 }
 
                 // Insertar el nuevo usuario en la base de datos y obtener el usuario con el IdUsuario asignado
-                _encrypt.GetSHA256(newUser.Password);
+               newUser.Password = _encrypt.GetSHA256(newUser.Password);
                 await _repository.InsertUser(newUser);
 
                 UsersDTO insertedUser = await _repository.GetUserByEmail(newUser.Email);

@@ -35,7 +35,7 @@ namespace FarmAdministrator.Controllers
 
 
         [HttpDelete]
-        [Route("/DeletePlanting")]
+        [Route("/DeletePlanting/{id}")]
 
         public async Task<IActionResult> DeletePlanting(int id)
         {
@@ -64,7 +64,7 @@ namespace FarmAdministrator.Controllers
 
 
         [HttpGet]
-        [Route("/PlotPlantings")]
+        [Route("/PlotPlantings/{id}")]
 
         public async Task<IActionResult> GetPlotPlantings(int id)
         {
@@ -104,7 +104,7 @@ namespace FarmAdministrator.Controllers
 
 
         [HttpGet]
-        [Route("GetPlantingById")]
+        [Route("GetPlantingById/{id}")]
         public async Task<IActionResult> GetPlantingById(int id)
         {
             try

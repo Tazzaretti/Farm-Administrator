@@ -32,7 +32,7 @@ namespace FarmAdministrator.Controllers
         }
 
 
-        [HttpGet("{id}")]
+        [HttpGet("GetUserById/{id}")]
         public async Task<ActionResult<UsersDTO>> GetById(int id)
         {
             var usuario = await _userService.GetUserByIdAsync(id);
@@ -67,7 +67,7 @@ namespace FarmAdministrator.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("DeleteById/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             await _userService.DeleteUserAsync(id);
