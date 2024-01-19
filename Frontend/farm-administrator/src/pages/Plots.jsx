@@ -4,12 +4,13 @@ import PlotManagement from '../components/AddPlotModal';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-
 const Plots = () => {
   const { plots, getPlots, deletePlot } = useData();
   const [newPlotName, setNewPlotName] = useState('');
   const [error, setError] = useState(null);
+  const [selectedPlotId, setSelectedPlotId] = useState(null); // Nuevo estado para almacenar el idPlot seleccionado
   const navigate = useNavigate();
+
   useEffect(() => {
     // Llama a getPlots cuando el componente se monta para obtener los plots del usuario
     getPlots().catch((error) => {
@@ -30,10 +31,22 @@ const Plots = () => {
     }
   };
 
+  const handleEdit = (plotId) => {
+    // Al hacer clic en "Editar", actualiza el estado selectedPlotId
+    setSelectedPlotId(plotId);
+    // Además, navega a la página de edición del lote
+    navigate(`/plots/${plotId}`);
+  };
+
+  const handleAddPlanting = () => {
+    // Al hacer clic en "Agregar Planting", navega a la página de edición del lote
+    navigate(`/plots/${selectedPlotId}/add-planting`);
+  };
+
   return (
     <div>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      <h1>Lista de Plots</h1>
+      <h1>Lotes</h1>
       <PlotManagement />
       <div className="row">
         {plots.map((plot) => (
@@ -41,14 +54,13 @@ const Plots = () => {
             <div className="card">
               <div className="card-body">
                 <h5 className="card-title">{plot.plotName}</h5>
-                <h6 className="card-subtitle mb-2 text-muted">ID: {plot.idPlot}</h6>
-                <p className="card-text">Size: {plot.size}</p>
-                <p className="card-text">Ground Type: {plot.groundType}</p>
+                <p className="card-text">Tamanio: {plot.size}</p>
+                <p className="card-text">Tipo de suelo: {plot.groundType}</p>
                 <Button
                   type="button"
                   className="btn"
-                  variant='dark'
-                  onClick={() => navigate(`/plots/${plot.idPlot}`)} // Nueva línea para navegar a la página de detalles
+                  variant="dark"
+                  onClick={() => handleEdit(plot.idPlot)} // Actualiza el idPlot al hacer clic en "Editar"
                 >
                   Editar
                 </Button>

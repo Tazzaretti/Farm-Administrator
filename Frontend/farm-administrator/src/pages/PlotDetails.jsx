@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useData } from '../context/DataContext';
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'; // Ajusta las importaciones según tus necesidades
 import { useParams } from 'react-router-dom';
+import PlantingManagement from '../components/AddPlantingModal';
+import NewPlot from '../components/NewPlot';
+import PlantingsList from '../components/PlantingsList';  // Asegúrate de importar correctamente
 
-const PlotDetails = ({ plotId }) => {
+const PlotDetails = () => {
   const { getPlantingsForPlot, getPlotById } = useData();
   const [plotDetails, setPlotDetails] = useState({});
-  const [plantings, setPlantings] = useState([]);
   const [error, setError] = useState(null);
   const { idPlot } = useParams();
 
@@ -14,11 +16,8 @@ const PlotDetails = ({ plotId }) => {
     const fetchData = async () => {
       try {
         // Obtener siembras para el lote utilizando el idPlot de la URL
-        const plantingsResponse = await getPlantingsForPlot(idPlot);
-        setPlantings(plantingsResponse);
-        const plotData = await getPlotById(idPlot)
-        setPlotDetails(plotData)
-        
+        const plotData = await getPlotById(idPlot);
+        setPlotDetails(plotData);
       } catch (error) {
         console.error('Error al obtener detalles del lote:', error);
         setError('Error al obtener detalles del lote');
@@ -26,16 +25,17 @@ const PlotDetails = ({ plotId }) => {
     };
 
     fetchData();
-  }, [idPlot, getPlantingsForPlot]);
+  }, [idPlot, getPlotById]);
 
   return (
     <div>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      <h1>Detalles del Lote</h1>
+      <h1>Eventos</h1>
+      <PlantingManagement />
       <Card>
         <Card.Body>
-          <Card.Title>{}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">ID: {idPlot}</Card.Subtitle>
+          <Card.Title>{plotDetails.plotName}</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">{plotDetails.owner}</Card.Subtitle>
           <ListGroup className="mb-3">
             <ListGroupItem>Tamaño: {plotDetails.size}</ListGroupItem>
             <ListGroupItem>Tipo de Suelo: {plotDetails.groundType}</ListGroupItem>
@@ -43,16 +43,7 @@ const PlotDetails = ({ plotId }) => {
           </ListGroup>
         </Card.Body>
       </Card>
-
-      <h2>Siembras en el Lote</h2>
-      <ul>
-        {plantings.map((planting) => (
-          <li key={planting.idPlanting}>
-            <strong>Cultivo:</strong> {planting.crop}, <strong>Temporada:</strong> {planting.season}, <strong>Fecha de Inicio:</strong> {planting.startDate}
-            {/* Agrega más detalles de la siembra según sea necesario */}
-          </li>
-        ))}
-      </ul>
+      <PlantingsList plotId={idPlot} />
     </div>
   );
 };

@@ -29,7 +29,7 @@ const PlotManagement = () => {
   return (
     <div>
       <Button variant="dark" className='mb-2' onClick={() => setShowAddPlotModal(true)}>
-        Agregar Plot
+        Crear lote
       </Button>
 
       <AddPlotModal

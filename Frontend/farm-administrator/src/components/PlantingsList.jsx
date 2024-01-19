@@ -1,19 +1,36 @@
-// PlantingsList.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useData } from '../context/DataContext';
+import PlantingCard from './PlantingCard';
 
-const PlantingsList = ({ plantings }) => {
+const PlantingsList = ({ plotId }) => {
+  const { getPlantingsForPlot } = useData();
+  const [plantings, setPlantings] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const plantingsResponse = await getPlantingsForPlot(plotId);
+        setPlantings(plantingsResponse);
+      } catch (error) {
+        console.error('Error al obtener siembras para el lote:', error);
+        setError('Error al obtener siembras para el lote');
+      }
+    };
+
+    fetchData();
+  }, [plotId, getPlantingsForPlot]);
+
   return (
     <div>
-      <h2>Siembras Relacionadas</h2>
-      <ul>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <div className="row">
         {plantings.map((planting) => (
-          <li key={planting.idPlanting}>
-            <strong>Cosecha:</strong> {planting.crop}<br />
-            <strong>Temporada:</strong> {planting.season}<br />
-            {/* Agrega más campos según sea necesario */}
-          </li>
+          <div key={planting.idPlanting} className="col-md-4 mb-3">
+            <PlantingCard planting={planting} />
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

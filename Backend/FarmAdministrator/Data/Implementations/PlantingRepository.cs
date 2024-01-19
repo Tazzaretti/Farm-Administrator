@@ -118,6 +118,7 @@ namespace Data.Implementations
                 .Select(planting => new PlantingDTO
                 {
                     // Asignar las propiedades necesarias de la entidad a las del DTO
+                    IdPlanting = planting.IdPlanting,
                     Crop = planting.Crop,
                     Season = planting.Season,
                     Deep = planting.Deep,
