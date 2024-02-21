@@ -38,6 +38,7 @@ namespace Data.Implementations
                     StartDate = harvest.StartDate,
                     EndDate = harvest.EndDate,
                     Cost = harvest.Cost,
+                    Crop = harvest.Crop,
                     IdPlot = harvest.IdPlot,
 
                 };

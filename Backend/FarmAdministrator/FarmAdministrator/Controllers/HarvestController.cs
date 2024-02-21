@@ -64,7 +64,7 @@ namespace FarmAdministrator.Controllers
 
 
         [HttpGet]
-        [Route("/PlotHarvests")]
+        [Route("/PlotHarvests/{id}")]
 
         public async Task<IActionResult> GetPlotHarvests(int id)
         {

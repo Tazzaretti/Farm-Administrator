@@ -16,6 +16,7 @@ namespace FarmAdministrator
             builder.Services.AddScoped<IEmailService, EmailService>();
             builder.Services.AddScoped<IPlotService, PlotService>();
             builder.Services.AddScoped<IPlantingService, PlantingService>();
+            builder.Services.AddScoped<IHarvestService, HarvestService>();
             //builder.Services.AddScoped<ISubject, Subject>();
 
             //patron de diseno
