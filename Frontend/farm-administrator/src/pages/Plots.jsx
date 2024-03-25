@@ -38,6 +38,27 @@ const Plots = () => {
     navigate(`/plots/${plotId}`);
   };
 
+  const handleNavHarvest = (plotId) => {
+    // Al hacer clic en "Editar", actualiza el estado selectedPlotId
+    setSelectedPlotId(plotId);
+    // Además, navega a la página de edición del lote
+    navigate(`/plots/harvests/${plotId}`);
+  };
+
+  const handleNavApplications = (plotId) => {
+    // Al hacer clic en "Editar", actualiza el estado selectedPlotId
+    setSelectedPlotId(plotId);
+    // Además, navega a la página de edición del lote
+    navigate(`/plots/applications/${plotId}`);
+  };
+
+  const handleNavPlantings = (plotId) => {
+    // Al hacer clic en "Editar", actualiza el estado selectedPlotId
+    setSelectedPlotId(plotId);
+    // Además, navega a la página de edición del lote
+    navigate(`/plots/plantings/${plotId}`);
+  };
+
   const handleAddPlanting = () => {
     // Al hacer clic en "Agregar Planting", navega a la página de edición del lote
     navigate(`/plots/${selectedPlotId}/add-planting`);
@@ -58,7 +79,31 @@ const Plots = () => {
                 <p className="card-text">Tipo de suelo: {plot.groundType}</p>
                 <Button
                   type="button"
-                  className="btn"
+                  className="btn m-1"
+                  variant="dark"
+                  onClick={() => handleNavHarvest(plot.idPlot)} // Actualiza el idPlot al hacer clic en "Editar"
+                >
+                  Cosechas
+                </Button>
+                <Button
+                  type="button"
+                  className="btn m-1"
+                  variant="dark"
+                  onClick={() => handleNavPlantings(plot.idPlot)} // Actualiza el idPlot al hacer clic en "Editar"
+                >
+                  Siembras
+                </Button>
+                <Button
+                  type="button"
+                  className="btn m-1"
+                  variant="dark"
+                  onClick={() => handleNavApplications(plot.idPlot)} // Actualiza el idPlot al hacer clic en "Editar"
+                >
+                  Aplicaciones
+                </Button>
+                <Button
+                  type="button"
+                  className="btn m-1"
                   variant="dark"
                   onClick={() => handleEdit(plot.idPlot)} // Actualiza el idPlot al hacer clic en "Editar"
                 >

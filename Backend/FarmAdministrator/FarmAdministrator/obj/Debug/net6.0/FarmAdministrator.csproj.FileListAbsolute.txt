@@ -218,3 +218,4 @@ C:\Users\tomas\Desktop\Proyectos\Farm-Administrator\Backend\FarmAdministrator\Fa
 C:\Users\tomas\Desktop\Proyectos\Farm-Administrator\Backend\FarmAdministrator\FarmAdministrator\obj\Debug\net6.0\FarmAdministrator.pdb
 C:\Users\tomas\Desktop\Proyectos\Farm-Administrator\Backend\FarmAdministrator\FarmAdministrator\obj\Debug\net6.0\FarmAdministrator.genruntimeconfig.cache
 C:\Users\tomas\Desktop\Proyectos\Farm-Administrator\Backend\FarmAdministrator\FarmAdministrator\obj\Debug\net6.0\ref\FarmAdministrator.dll
+C:\Users\tomas\Desktop\Proyectos\Farm-Administrator\Backend\FarmAdministrator\FarmAdministrator\obj\Debug\net6.0\FarmAdministrator.sourcelink.json

@@ -18,7 +18,7 @@ namespace Models.Models
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         public decimal? Cost { get; set; }
-        public int? Crop { get; set; }
+        public int? IdCrop { get; set; }
         public int IdPlot { get; set; }
 
         public virtual Plots IdPlotNavigation { get; set; }

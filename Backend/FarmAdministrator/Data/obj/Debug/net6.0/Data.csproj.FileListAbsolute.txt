@@ -28,3 +28,4 @@ C:\Users\tomas\Desktop\Proyectos\Farm-Administrator\Backend\FarmAdministrator\Da
 C:\Users\tomas\Desktop\Proyectos\Farm-Administrator\Backend\FarmAdministrator\Data\obj\Debug\net6.0\refint\Data.dll
 C:\Users\tomas\Desktop\Proyectos\Farm-Administrator\Backend\FarmAdministrator\Data\obj\Debug\net6.0\Data.pdb
 C:\Users\tomas\Desktop\Proyectos\Farm-Administrator\Backend\FarmAdministrator\Data\obj\Debug\net6.0\ref\Data.dll
+C:\Users\tomas\Desktop\Proyectos\Farm-Administrator\Backend\FarmAdministrator\Data\obj\Debug\net6.0\Data.sourcelink.json

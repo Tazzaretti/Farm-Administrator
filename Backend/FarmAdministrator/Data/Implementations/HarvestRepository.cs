@@ -38,7 +38,7 @@ namespace Data.Implementations
                     StartDate = harvest.StartDate,
                     EndDate = harvest.EndDate,
                     Cost = harvest.Cost,
-                    Crop = harvest.Crop,
+                    IdCrop = harvest.Crop,
                     IdPlot = harvest.IdPlot,
 
                 };
@@ -125,6 +125,7 @@ namespace Data.Implementations
                 .Select(harvest => new HarvestDTO
                 {
                     // Asignar las propiedades necesarias de la entidad a las del DTO
+                    IdHarvest = harvest.IdHarvest,
                     IdPlanting = harvest.IdPlanting,
                     Season = harvest.Season,
                     Method = harvest.Method,

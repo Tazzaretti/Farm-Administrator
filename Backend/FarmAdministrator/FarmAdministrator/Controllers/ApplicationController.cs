@@ -64,7 +64,7 @@ namespace FarmAdministrator.Controllers
 
 
         [HttpGet]
-        [Route("/PlotApplications")]
+        [Route("/PlotApplications/{id}")]
 
         public async Task<IActionResult> GetPlotApplications(int id)
         {

@@ -120,6 +120,7 @@ namespace Data.Implementations
                 .Select(application => new ApplicationDTO
                 {
                     // Asignar las propiedades necesarias de la entidad a las del DTO
+                    IdApplication = application.IdApplication,
                     CropType = application.CropType,
                     StartDate = application.StartDate,
                     EndDate = application.EndDate,

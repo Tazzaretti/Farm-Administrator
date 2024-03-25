@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yGXtzKAZICtO9NyMUosWHUx3GZQf3U9+AOchr6y3tDTPoDkBnq9gjyBt48uxmL8N8U38X4cdzsx7E3VjAD+cVQ==",
+  "dgSpecHash": "QoM8a1YADHbMsF4AnivtNlswIxtZ5hJ0jXsTgyXsxNPhe4fw9GZL4P9O+9FEHh0ujE11ol+F4yHAiKvO9jk0LA==",
   "success": true,
   "projectFilePath": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Implementations\\Services.csproj",
   "expectedPackageFiles": [
@@ -48,7 +48,10 @@
     "C:\\Users\\tomas\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\tomas\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\tomas\\.nuget\\packages\\system.text.encoding.codepages\\7.0.0\\system.text.encoding.codepages.7.0.0.nupkg.sha512",
-    "C:\\Users\\tomas\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
+    "C:\\Users\\tomas\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
+    "C:\\Users\\tomas\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\tomas\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\tomas\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512"
   ],
   "logs": []
 }

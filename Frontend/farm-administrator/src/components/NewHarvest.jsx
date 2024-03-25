@@ -120,7 +120,7 @@ const NewHarvest = ({ onSubmit }) => {
         />
       </div>
       <div className="col-md-6">
-        <label htmlFor="distance" className="form-label">
+        <label htmlFor="method" className="form-label">
           Metodo
         </label>
         <input

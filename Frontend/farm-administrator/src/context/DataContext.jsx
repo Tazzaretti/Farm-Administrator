@@ -64,6 +64,16 @@ export const DataProvider = ({ children }) => {
     }
   };
 
+  const getApplicationsForPlot = async (plotId) => {
+    try {
+      const response = await axios.get(`https://localhost:7182/PlotApplications/${plotId}`);
+      return response.data;
+    } catch (error) {
+      console.error('Error al obtener aplicaciones para el lote:', error);
+      throw new Error('Error al obtener aplicaciones para el lote');
+    }
+  };
+  
   // Nueva función para obtener un lote por su ID
   const getPlotById = async (plotId) => {
     try {
@@ -85,6 +95,7 @@ export const DataProvider = ({ children }) => {
     deletePlot,
     getPlantingsForPlot,
     getHarvestsForPlot,
+    getApplicationsForPlot,
     getPlotById, // Agrega la función getPlotById al contexto
     // Otras funciones y estados que quieras proporcionar
   };

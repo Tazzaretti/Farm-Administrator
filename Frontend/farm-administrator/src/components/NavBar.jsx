@@ -15,9 +15,9 @@ function NavBar() {
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
-      <Navbar.Brand as={Link} to="home">Farm Administrator</Navbar.Brand>
+      <Navbar.Brand as={Link} to="/">Farm Administrator</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
+      <Navbar.Collapse id="basic-navbar-nav" className='justify-content-start'>
         <Nav>
         {!isLogin ? (
           <>

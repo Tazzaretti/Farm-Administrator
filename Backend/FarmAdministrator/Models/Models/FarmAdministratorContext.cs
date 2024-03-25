@@ -102,11 +102,11 @@ namespace Models.Models
                     .HasColumnType("decimal(18, 0)")
                     .HasColumnName("cost");
 
-                entity.Property(e => e.Crop).HasColumnName("crop");
-
                 entity.Property(e => e.EndDate)
                     .HasColumnType("date")
                     .HasColumnName("end_date");
+
+                entity.Property(e => e.IdCrop).HasColumnName("id_crop");
 
                 entity.Property(e => e.IdPlanting).HasColumnName("id_planting");
 
