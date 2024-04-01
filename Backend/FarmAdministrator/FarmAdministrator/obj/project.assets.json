@@ -3353,19 +3353,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tomas\\.nuget\\packages\\": {}
+    "C:\\Users\\tomia\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\FarmAdministrator\\FarmAdministrator.csproj",
+      "projectUniqueName": "C:\\Users\\tomia\\OneDrive\\Escritorio\\FarmAdmin\\Farm-Administrator\\Backend\\FarmAdministrator\\FarmAdministrator\\FarmAdministrator.csproj",
       "projectName": "FarmAdministrator",
-      "projectPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\FarmAdministrator\\FarmAdministrator.csproj",
-      "packagesPath": "C:\\Users\\tomas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\FarmAdministrator\\obj\\",
+      "projectPath": "C:\\Users\\tomia\\OneDrive\\Escritorio\\FarmAdmin\\Farm-Administrator\\Backend\\FarmAdministrator\\FarmAdministrator\\FarmAdministrator.csproj",
+      "packagesPath": "C:\\Users\\tomia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tomia\\OneDrive\\Escritorio\\FarmAdmin\\Farm-Administrator\\Backend\\FarmAdministrator\\FarmAdministrator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\tomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tomia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3379,14 +3379,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Data\\Data.csproj"
+            "C:\\Users\\tomia\\OneDrive\\Escritorio\\FarmAdmin\\Farm-Administrator\\Backend\\FarmAdministrator\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\tomia\\OneDrive\\Escritorio\\FarmAdmin\\Farm-Administrator\\Backend\\FarmAdministrator\\Data\\Data.csproj"
             },
-            "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Implementations\\Services.csproj": {
-              "projectPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Implementations\\Services.csproj"
+            "C:\\Users\\tomia\\OneDrive\\Escritorio\\FarmAdmin\\Farm-Administrator\\Backend\\FarmAdministrator\\Implementations\\Services.csproj": {
+              "projectPath": "C:\\Users\\tomia\\OneDrive\\Escritorio\\FarmAdmin\\Farm-Administrator\\Backend\\FarmAdministrator\\Implementations\\Services.csproj"
             },
-            "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj"
+            "C:\\Users\\tomia\\OneDrive\\Escritorio\\FarmAdmin\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\tomia\\OneDrive\\Escritorio\\FarmAdmin\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj"
             }
           }
         }
@@ -3425,24 +3425,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.26, 6.0.26]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -3451,7 +3433,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

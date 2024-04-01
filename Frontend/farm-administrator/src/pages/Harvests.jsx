@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useData } from '../context/DataContext';
-import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'; // Ajusta las importaciones según tus necesidades
 import { useParams } from 'react-router-dom';
-import PlantingManagement from '../components/AddPlantingModal';
 import HarvestManagement from '../components/AddHarvestModal';
-import NewPlot from '../components/NewPlot';
-import PlantingsList from '../components/PlantingsList';  // Asegúrate de importar correctamente
 import HarvestsList from '../components/HarvestsList';
 
 
@@ -32,9 +28,9 @@ const Harvests = () => {
 
   return (
     <div>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      
-      <h1>Cosechas</h1>
+      <div className='row text-center m-2'>
+        <h1>Cosechas</h1>
+      </div>
       <HarvestManagement/>
       <HarvestsList plotId={idPlot}/>
 

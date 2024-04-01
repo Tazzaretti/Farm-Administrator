@@ -66,59 +66,6 @@ namespace FarmAdministrator.Controllers
             }
         }
 
-        //[HttpPost("Registro")]
-        //public async Task<ActionResult<string>> Registro([FromBody] UsuariosDTO newUser)
-        //{
-        //    try
-        //    {
-        //        // Verificar si el usuario ya existe en la base de datos
-        //        var existingUser = await _usuarioRepository.GetUsuarioByEmail(newUser.Email);
-        //        if (existingUser != null)
-        //        {
-        //            return BadRequest("El usuario ya existe");
-        //        }
-        //
-        //        // Insertar el nuevo usuario en la base de datos y obtener el usuario con el IdUsuario asignado
-        //        await _usuarioRepository.InsertUsuario(newUser);
-        //
-        //        UsuariosDTO insertedUser = await _usuarioRepository.GetUsuarioByEmail(newUser.Email);
-        //
-        //        if (insertedUser != null)
-        //        {
-        //            // En este punto, insertedUser.IdUsuario contendrá el ID asignado automáticamente.
-        //            if (insertedUser.TipoUsuario == 3)
-        //            {
-        //                AdminDTO newAdmin = new AdminDTO()
-        //                {
-        //                    IdUsuario = insertedUser.IdUsuario,
-        //                    RolAdmin = 1
-        //                };
-        //
-        //                try
-        //                {
-        //                    await _adminRepository.InsertAdmin(newAdmin);
-        //                }
-        //                catch (Exception ex)
-        //                {
-        //                    return BadRequest(new { error = ex.Message });
-        //                }
-        //            }
-        //
-        //            // Generar un token JWT para el nuevo usuario
-        //            var token = GenerateJwtToken(newUser);
-        //
-        //            return Ok(token);
-        //        }
-        //        else
-        //        {
-        //            return BadRequest("Error al insertar el usuario.");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest($"Error interno del servidor: {ex.Message}");
-        //    }
-        //}
 
         [HttpPost("Registro")]
         public async Task<ActionResult<string>> Registro([FromBody] UsersDTO newUser)

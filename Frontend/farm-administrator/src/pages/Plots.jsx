@@ -67,12 +67,16 @@ const Plots = () => {
   return (
     <div>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      <h1>Lotes</h1>
-      <PlotManagement />
+      <div className='row text-center m-2'>
+        <h1>Lotes</h1>
+      </div>
+      <div className='row'>
+        <PlotManagement />
+      </div>
       <div className="row">
         {plots.map((plot) => (
           <div key={plot.idPlot} className="col-sm-6 mb-3">
-            <div className="card">
+            <div className="card m-2">
               <div className="card-body">
                 <h5 className="card-title">{plot.plotName}</h5>
                 <p className="card-text">Tamanio: {plot.size}</p>

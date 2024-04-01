@@ -14,7 +14,6 @@ const HarvestList = ({ plotId }) => {
         setHarvests(harvestsResponse);
       } catch (error) {
         console.error('Error al obtener siembras para el lote:', error);
-        setError('Error al obtener siembras para el lote');
       }
     };
 
