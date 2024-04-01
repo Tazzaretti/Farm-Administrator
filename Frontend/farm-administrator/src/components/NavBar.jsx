@@ -16,8 +16,8 @@ function NavBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Navbar.Brand as={Link} to="/plots" className='m-1'>Campo</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav" className='justify-content-start'>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" className='m-1' />
+      <Navbar.Collapse id="basic-navbar-nav" className='justify-content-start m-1'>
         <Nav>
         {!isLogin ? (
           <>
