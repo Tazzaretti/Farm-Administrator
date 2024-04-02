@@ -36,8 +36,18 @@ const Plantings = () => {
       <div className='row text-center'>
         <h1>Siembras</h1>
       </div>
-      <PlantingManagement />
-      <PlantingsList plotId={idPlot} />
+      <div className='row'>
+        <PlantingManagement />
+      </div>
+      <div className='row'>
+        <div className='col'>
+          <PlantingsList plotId={idPlot} />
+        </div>
+
+      </div>
+
+
+
 
     </div>
   );

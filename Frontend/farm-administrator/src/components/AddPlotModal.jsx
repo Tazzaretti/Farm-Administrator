@@ -28,7 +28,7 @@ const PlotManagement = () => {
 
   return (
     <div>
-      <Button variant="dark" className='m-2' onClick={() => setShowAddPlotModal(true)}>
+      <Button variant="outline-success" className='m-2' onClick={() => setShowAddPlotModal(true)}>
         Crear lote
       </Button>
 

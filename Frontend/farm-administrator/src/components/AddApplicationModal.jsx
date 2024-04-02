@@ -28,7 +28,7 @@ const ApplicationManagement = () => {
 
   return (
     <div>
-      <Button variant="dark" className='m-2' onClick={() => setShowAddApplicationModal(true)}>
+      <Button variant="outline-success" className='m-2' onClick={() => setShowAddApplicationModal(true)}>
         Agregar Aplicacion
       </Button>
 

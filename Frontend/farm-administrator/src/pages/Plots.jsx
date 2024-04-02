@@ -68,51 +68,57 @@ const Plots = () => {
       </div>
       <div className="row">
         {plots.map((plot) => (
-          <div key={plot.idPlot} className="col-sm-6 mb-3">
-            <div className="card m-2">
+          <div key={plot.idPlot} className="col-lg-3 col-md-4 col-sm-6 mb-3">
+            <div className="card m-2 text-center">
               <div className="card-body">
                 <h5 className="card-title">{plot.plotName}</h5>
                 <p className="card-text">Tamaño: {plot.size}</p>
                 <p className="card-text">Tipo de suelo: {plot.groundType}</p>
-                <Button
-                  type="button"
-                  className="btn m-1"
-                  variant="dark"
-                  onClick={() => handleNavHarvest(plot.idPlot)}
-                >
-                  Cosechas
-                </Button>
-                <Button
-                  type="button"
-                  className="btn m-1"
-                  variant="dark"
-                  onClick={() => handleNavPlantings(plot.idPlot)}
-                >
-                  Siembras
-                </Button>
-                <Button
-                  type="button"
-                  className="btn m-1"
-                  variant="dark"
-                  onClick={() => handleNavApplications(plot.idPlot)}
-                >
-                  Aplicaciones
-                </Button>
-                <Button
-                  type="button"
-                  className="btn m-1"
-                  variant="dark"
-                  onClick={() => handleEdit(plot)}
-                >
-                  Editar
-                </Button>
-                <Button
-                  type="button"
-                  className="btn btn-danger m-1"
-                  onClick={() => handleDelete(plot.idPlot)}
-                >
-                  Eliminar
-                </Button>
+                <div className='row'>
+                  <Button
+                    type="button"
+                    className="btn m-1 col"
+                    variant="outline-dark"
+                    onClick={() => handleNavHarvest(plot.idPlot)}
+                  >
+                    Cosechas
+                  </Button>
+                  <Button
+                    type="button"
+                    className="btn m-1 col"
+                    variant="outline-dark"
+                    onClick={() => handleNavPlantings(plot.idPlot)}
+                  >
+                    Siembras
+                  </Button>
+                  <Button
+                    type="button"
+                    className="btn m-1 col"
+                    variant="outline-dark"
+                    onClick={() => handleNavApplications(plot.idPlot)}
+                  >
+                    Aplicaciones
+                  </Button>
+                </div>
+
+                <div className='row'>
+                  <Button
+                    type="button"
+                    className="col btn m-1"
+                    variant="outline-warning"
+                    onClick={() => handleEdit(plot)}
+                  >
+                    Editar
+                  </Button>
+                  <Button
+                    type="button"
+                    className="col btn m-1"
+                    variant='outline-danger'
+                    onClick={() => handleDelete(plot.idPlot)}
+                  >
+                    Eliminar
+                  </Button>
+                </div>
               </div>
             </div>
             {/* Modal de edición dentro de cada tarjeta */}

@@ -23,21 +23,26 @@ const ApplicationCard = ({ application }) => {
   };
 
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card className='card m-2 text-center'>
       <Card.Body>
         <Card.Title>{application.startDate.split('T')[0]}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">Temporada: {application.season}</Card.Subtitle>
-        <Button variant="primary" onClick={handleShow}>
-          Ver Detalles
-        </Button>
-        <Button
-          type="button"
-          className="btn m-1"
-          variant="dark"
-          onClick={() => handleEdit(application)}
-        >
-          Editar
-        </Button>
+        <div className='row'>
+          <Button 
+            className='col btn m-1'
+            variant="outline-dark" 
+            onClick={handleShow}>
+            Ver Detalles
+          </Button>
+          <Button
+            type="button"
+            className="col btn m-1"
+            variant="outline-warning"
+            onClick={() => handleEdit(application)}
+          >
+            Editar
+          </Button>
+          </div>
       </Card.Body>
 
       <Modal show={showModal} onHide={handleClose}>

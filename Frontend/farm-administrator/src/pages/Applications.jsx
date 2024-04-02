@@ -29,11 +29,20 @@ const PlotDetails = () => {
   return (
     <div>
       {error && <p style={{ color: 'red' }}>{error}</p>}
+      
       <div className='row text-center'>
         <h1>Aplicaciones</h1>
       </div>
-      <ApplicationManagement/>
-      <ApplicationList plotId={idPlot}/>
+
+      <div className='row'>
+        <ApplicationManagement/>
+      </div>
+
+      <div className='row'>
+        <div className='col'>
+          <ApplicationList plotId={idPlot}/>
+        </div>
+      </div>
 
     </div>
   );

@@ -25,11 +25,13 @@ const ApplicationList = ({ plotId }) => {
     <div>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <div className="row">
-        {applications.map((application) => (
-          <div key={application.idApplication} className="col-md-4 m-2">
-            <ApplicationCard application={application} />
-          </div>
-        ))}
+        <div className='col-sm-6 mb-3'>
+          {applications.map((application) => (
+            <div key={application.idApplication}>
+              <ApplicationCard application={application} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -25,11 +25,13 @@ const PlantingsList = ({ plotId }) => {
     <div>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <div className="row">
-        {plantings.map((planting) => (
-          <div key={planting.idPlanting} className="col-md-4 m-2">
-            <PlantingCard planting={planting} />
-          </div>
-        ))}
+        <div className='col-sm-6 mb-3'>
+          {plantings.map((planting) => (
+            <div key={planting.idPlanting}>
+              <PlantingCard planting={planting} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

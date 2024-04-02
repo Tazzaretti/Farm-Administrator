@@ -23,23 +23,27 @@ const PlantingCard = ({ planting }) => {
   };
 
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card className="card m-2 text-center">
       <Card.Body>
         <Card.Title>{planting.startDate ? planting.startDate.split('T')[0] : "No hay fecha de inicio"}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">Temporada: {planting.season}</Card.Subtitle>
-        <Button variant="primary" onClick={handleShow}>
-          Ver Detalles
-        </Button>
-        <Button
-          type="button"
-          className="btn m-1"
-          variant="dark"
-          onClick={() => handleEdit(planting)}
-        >
-          Editar
-        </Button>
+        <div className='row'>
+          <Button 
+            variant="outline-dark" 
+            className='col btn m-1' 
+            onClick={handleShow}>
+            Ver Detalles
+          </Button>
+          <Button
+            type="button"
+            className="col btn m-1"
+            variant="outline-warning"
+            onClick={() => handleEdit(planting)}
+          >
+            Editar
+          </Button>
+        </div>
       </Card.Body>
-
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Detalles de la Siembra</Modal.Title>

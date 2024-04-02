@@ -171,7 +171,7 @@ const NewApplication = ({ onSubmit }) => {
             />
           </div>
           <div className="col-12">
-            <Button variant="dark" type="submit">
+            <Button variant="outline-success" type="submit">
               Agregar Aplicacion
             </Button>
           </div>
