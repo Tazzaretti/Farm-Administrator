@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Card, Button, Modal } from 'react-bootstrap';
+import EditPlanting from './EditPlanting';
 
 const PlantingCard = ({ planting }) => {
   const [showModal, setShowModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [selectedPlantingData, setSelectedPlantingData] = useState(null);
 
   const handleShow = () => {
     setShowModal(true);
@@ -12,13 +15,28 @@ const PlantingCard = ({ planting }) => {
     setShowModal(false);
   };
 
+  const handleEdit = (planting) => {
+    console.log(planting);
+    setSelectedPlantingData(planting);
+    setShowEditModal(true);
+    
+  };
+
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Body>
-        <Card.Title>{planting.startDate.split('T')[0]}</Card.Title>
+        <Card.Title>{planting.startDate ? planting.startDate.split('T')[0] : "No hay fecha de inicio"}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">Temporada: {planting.season}</Card.Subtitle>
         <Button variant="primary" onClick={handleShow}>
           Ver Detalles
+        </Button>
+        <Button
+          type="button"
+          className="btn m-1"
+          variant="dark"
+          onClick={() => handleEdit(planting)}
+        >
+          Editar
         </Button>
       </Card.Body>
 
@@ -42,6 +60,15 @@ const PlantingCard = ({ planting }) => {
             Cerrar
           </Button>
         </Modal.Footer>
+      </Modal>
+      {/* Modal de edición dentro de cada tarjeta */}
+      <Modal show={showEditModal} onHide={() => setShowEditModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Editar Planting</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <EditPlanting planting={selectedPlantingData} onSubmit={() => setShowEditModal(false)} />
+        </Modal.Body>
       </Modal>
     </Card>
   );

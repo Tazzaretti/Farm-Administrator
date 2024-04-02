@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Card, Button, Modal } from 'react-bootstrap';
+import EditApplication from './EditApplication';
 
 const ApplicationCard = ({ application }) => {
   const [showModal, setShowModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [selectedApplicationData, setSelectedApplicationData] = useState(null);
 
   const handleShow = () => {
     setShowModal(true);
@@ -12,6 +15,13 @@ const ApplicationCard = ({ application }) => {
     setShowModal(false);
   };
 
+  const handleEdit = (application) => {
+    console.log(application);
+    setSelectedApplicationData(application);
+    setShowEditModal(true);
+    
+  };
+
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Body>
@@ -19,6 +29,14 @@ const ApplicationCard = ({ application }) => {
         <Card.Subtitle className="mb-2 text-muted">Temporada: {application.season}</Card.Subtitle>
         <Button variant="primary" onClick={handleShow}>
           Ver Detalles
+        </Button>
+        <Button
+          type="button"
+          className="btn m-1"
+          variant="dark"
+          onClick={() => handleEdit(application)}
+        >
+          Editar
         </Button>
       </Card.Body>
 
@@ -41,6 +59,15 @@ const ApplicationCard = ({ application }) => {
             Cerrar
           </Button>
         </Modal.Footer>
+      </Modal>
+      {/* Modal de edición dentro de cada tarjeta */}
+      <Modal show={showEditModal} onHide={() => setShowEditModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Editar Application</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <EditApplication application={selectedApplicationData} onSubmit={() => setShowEditModal(false)} />
+        </Modal.Body>
       </Modal>
     </Card>
   );

@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
-import { useData } from '../context/DataContext';
-import useNotify from "../hooks/useNotify";
-import { useParams } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+import useNotify from "../hooks/useNotify"
 
-const NewApplication = ({ onSubmit }) => {
+const EditApplication = ({ onSubmit, application }) => {
     const { successMessage, errorMessage } = useNotify();
-    const { idPlot } = useParams();
+    const {user} = useAuth();
     const [applicationData, setApplicationData] = useState({
-        idApplication: 0,
-        cropType: "",
-        startDate: "",
-        endDate: "",
-        method: "",
-        notes: "",
-        productType: "",
-        dose: 0,
-        brand: "",
-        cost: 0,
+        idApplication: application.idApplication,
+        cropType: application.cropType,
+        startDate: application.startDate,
+        endDate: application.endDate,
+        method: application.method,
+        notes: application.notes,
+        productType: application.productType,
+        dose: application.dose,
+        brand: application.brand,
+        cost: application.cost,
 
-        idPlot: idPlot // Usar el primer lote por defecto, cambiar si es necesario
+        idPlot: application.idPlot // Usar el primer lote por defecto, cambiar si es necesario
     });
 
     const handleChange = (e) => {
@@ -32,18 +31,18 @@ const NewApplication = ({ onSubmit }) => {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+      e.preventDefault();
     
-        try {
-          // Realiza la llamada al backend para agregar el harvest utilizando Axios
-          const response = await axios.post('https://localhost:7182/CreateApplication', applicationData);
-    
-          // Llama a onSubmit solo si la llamada al backend fue exitosa
-          onSubmit();
-          successMessage("El application se creó con éxito");
-        } catch (error) {
-          errorMessage("Ocurrió un error al crear el application");
-        }
+      try {
+        // Realiza la llamada al backend para agregar el plot utilizando Axios
+        const response = await axios.post('https://localhost:7182/ModifyApplication', applicationData);
+      
+        // Llama a onSubmit solo si la llamada al backend fue exitosa
+        onSubmit();
+        successMessage("El application se edito con exito");
+      } catch (error) {
+        errorMessage("Ocurrio un error al editar el application");
+      }
     };
 
     return (
@@ -57,7 +56,7 @@ const NewApplication = ({ onSubmit }) => {
               className="form-control"
               id="cropType"
               name="cropType"
-              placeholder='Nombre del cultivo'
+              placeholder={applicationData.cropType}
               value={applicationData.cropType}
               onChange={handleChange}
             />
@@ -71,7 +70,7 @@ const NewApplication = ({ onSubmit }) => {
               className="form-control"
               id="notes"
               name="notes"
-              placeholder='Ingresar notas'
+              placeholder={applicationData.notes}
               value={applicationData.notes}
               onChange={handleChange}
             />
@@ -83,10 +82,10 @@ const NewApplication = ({ onSubmit }) => {
             <input
               type="text"
               className="form-control"
-              id="product"
-              name="product"
-              placeholder='Ingresar producto'
-              value={applicationData.product}
+              id="productType"
+              name="productType"
+              placeholder={applicationData.productType}
+              value={applicationData.productType}
               onChange={handleChange}
             />
           </div>
@@ -99,7 +98,7 @@ const NewApplication = ({ onSubmit }) => {
               className="form-control"
               id="brand"
               name="brand"
-              placeholder='Ingresar marca del producto'
+              placeholder={applicationData.brand}
               value={applicationData.brand}
               onChange={handleChange}
             />
@@ -113,7 +112,7 @@ const NewApplication = ({ onSubmit }) => {
               className="form-control"
               id="method"
               name="method"
-              placeholder='Ingresar metodo'
+              placeholder={applicationData.method}
               value={applicationData.method}
               onChange={handleChange}
             />
@@ -172,13 +171,11 @@ const NewApplication = ({ onSubmit }) => {
           </div>
           <div className="col-12">
             <Button variant="dark" type="submit">
-              Agregar Aplicacion
+              Editar Aplicacion
             </Button>
           </div>
         </form>
     );
 };
 
-export default NewApplication;
-
-
+export default EditApplication;

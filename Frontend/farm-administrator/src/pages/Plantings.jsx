@@ -33,8 +33,9 @@ const Plantings = () => {
   return (
     <div>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      
-      <h1>Siembras</h1>
+      <div className='row text-center'>
+        <h1>Siembras</h1>
+      </div>
       <PlantingManagement />
       <PlantingsList plotId={idPlot} />
 

@@ -6,7 +6,7 @@ const AddApplicationModal = ({ show, handleClose, handleAddApplication }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Agregar nueva cosecha</Modal.Title>
+        <Modal.Title>Agregar nueva aplicacion</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {/* Pasa la función handleAddApplication directamente al componente NewPlot */}
