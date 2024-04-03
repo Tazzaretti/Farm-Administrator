@@ -1,63 +1,203 @@
-import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
+import React, { useState, useEffect } from 'react';
+import { useData } from '../context/DataContext';
+import axios from 'axios';
+import useNotify from '../hooks/useNotify';
 
-const Register = () => {
+const Register = (onSubmit) => {
+  const { successMessage, errorMessage } = useNotify(); // Importa las funciones de notificación
+  const [userData, setUserData] = useState({
+    idUser: 0,
+    password: '',
+    name: '',
+    lastName: '',
+    userRole: 1,
+    userType: 0,
+    email: '',
+    phone: 0,
+    adress: '',
+    experience: '',
+    education: '',
+    state: 0,
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+
+  const RegisterFunction = async () => {
+    console.log('dentro de data context')
+    console.log(userData);
+    try {
+      const response = await axios.post('https://localhost:7182/api/Auth/Registro', userData);
+      successMessage('El usuario se creo con exito');
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Evita la recarga de la página
+    console.log('dentro de handle submit');
+    try {
+      await RegisterFunction(userData);
+      console.log('después de enviar datos');
+    } catch (error) {
+      console.error('Error al crear usuario', error);
+    }
+  };
+
   return (
-    <div className="d-flex align-items-center justify-content-center" style={{ height: '100vh' }}>
-      <Card style={{ width: '20rem' }}>
-        <Card.Header as="h5">Registrar Nuevo Usuario</Card.Header>
-        <Card.Body>
-          <Form>
-            <Form.Group controlId="Email" className='mb-3'>
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Email" />
-              <Form.Text className="text-muted">
-                Nunca compartiremos su Email con nadie mas.
-              </Form.Text>
-            </Form.Group>
+    <form className="row g-3" onSubmit={handleSubmit}>
 
-            <Form.Group controlId="Password" className="mb-3">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Contrasenia" />
-            </Form.Group>
-
-            <Form.Group controlId="Name" className="mb-3">
-              <Form.Label>Nombre</Form.Label>
-              <Form.Control type="text-muted" placeholder="Ingrese su nombre" />
-            </Form.Group>
-
-            <Form.Group controlId="LastName" className="mb-3">
-              <Form.Label>Apellido</Form.Label>
-              <Form.Control type="text-muted" placeholder="Ingrese su apellido" />
-            </Form.Group>
-
-            <Form.Group controlId="Phone" className="mb-3">
-              <Form.Label>Telefono</Form.Label>
-              <Form.Control type="text-muted" placeholder="Ingrese su telefono" />
-            </Form.Group>
-
-            <Form.Group controlId="Adress" className="mb-3">
-              <Form.Label>Direccion</Form.Label>
-              <Form.Control type="text-muted" placeholder="Ingrese su direccion" />
-            </Form.Group>
-            
-            <Form.Label>Selecciona una opción</Form.Label>
-            <Form.Select custom className="mb-3">
-              <option value="Agricultor">Agricultor</option>
-              <option value="Ingeniero">Ingeniero</option>
-              <option value="Investigador">Investigador</option>
-              <option value="Transportista">Transportista</option>
-              <option value="Empleado">Empleado</option>
-            </Form.Select>
-            <Button variant="dark" type="submit">
-              Submit
-            </Button>
-          </Form>
-        </Card.Body>
-      </Card>
+    <div className="col-md-6">
+      <label htmlFor="email" className="form-label">
+        Email
+      </label>
+      <input
+        type="text"
+        className="form-control"
+        id="email"
+        name="email"
+        placeholder='Ingresar email'
+        value={userData.email}
+        onChange={handleChange}
+      />
     </div>
+
+    <div className="col-md-6">
+      <label htmlFor="notes" className="form-label">
+        Password
+      </label>
+      <input
+        type="password"
+        className="form-control"
+        id="password"
+        name="password"
+        placeholder='Ingrese su clave'
+        value={userData.password}
+        onChange={handleChange}
+      />
+    </div>
+
+    <div className="col-md-6">
+      <label htmlFor="name" className="form-label">
+        Nombre
+      </label>
+      <input
+        type="text"
+        className="form-control"
+        id="name"
+        name="name"
+        placeholder='Nombre'
+        value={userData.name}
+        onChange={handleChange}
+      />
+    </div>
+
+    <div className="col-md-6">
+      <label htmlFor="lastName" className="form-label">
+        Apellido
+      </label>
+      <input
+        type="text"
+        className="form-control"
+        id="lastName"
+        name="lastName"
+        value={userData.lastName}
+        onChange={handleChange}
+      />
+    </div>
+
+    <div className="col-md-6">
+      <label htmlFor="phone" className="form-label">
+        Telefono
+      </label>
+      <input
+        type="number"
+        className="form-control"
+        id="phone"
+        name="phone"
+        value={userData.phone}
+        onChange={handleChange}
+      />
+    </div>
+
+    <div className="col-md-6">
+      <label htmlFor="adress" className="form-label">
+        Direccion
+      </label>
+      <input
+        type="text"
+        className="form-control"
+        id="adress"
+        name="adress"
+        value={userData.adress}
+        onChange={handleChange}
+      />
+    </div>
+
+    <div className="col-md-6">
+      <label htmlFor="experience" className="form-label">
+        Experiencia
+      </label>
+      <input
+        type="text"
+        className="form-control"
+        id="experience"
+        name="experience"
+        value={userData.experience}
+        onChange={handleChange}
+      />
+    </div>
+
+    <div className="col-md-6">
+      <label htmlFor="education" className="form-label">
+        Educacion
+      </label>
+      <input
+        type="text"
+        className="form-control"
+        id="education"
+        name="education"
+        value={userData.education}
+        onChange={handleChange}
+      />
+    </div>
+
+    <div className="col-md-6">
+      <label htmlFor="userType" className="form-label">
+        Ocupacion
+      </label>
+      <select
+        id="userType"
+        className="form-select"
+        name="userType"
+        value={userData.userType}
+        onChange={handleChange}
+      >
+        <option value="1">Agricultor</option>
+        <option value="2">Ingeniero</option>
+        <option value="3">Investigador</option>
+        <option value="4">Transportista</option>
+        <option value="5">Empleado</option>
+      </select>
+    </div>
+    
+    <div className="col-12">
+      <Button variant="dark" type="submit">
+            Registrarse
+      </Button>
+    </div>
+  </form>   
   );
 };
 

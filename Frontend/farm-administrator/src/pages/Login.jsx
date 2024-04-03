@@ -17,6 +17,8 @@ const Login = () => {
     // Llamamos a la función de inicio de sesión con el email y la contraseña
     await login(email, password);
 
+    navigate('/plots')
+
   };
   
   return (

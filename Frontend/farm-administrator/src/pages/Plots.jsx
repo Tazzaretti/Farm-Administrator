@@ -14,13 +14,7 @@ const Plots = () => {
   const navigate = useNavigate();
   const [showEditModal, setShowEditModal] = useState(false);
 
-  useEffect(() => {
-    getPlots().catch((error) => {
-      console.error('Error al obtener plots:', error);
-      setError('Error al obtener plots');
-    });
-  }, []);
-
+  
   const handleDelete = async (plotId) => {
     try {
       await deletePlot(plotId);
@@ -53,8 +47,24 @@ const Plots = () => {
     navigate(`/plots/plantings/${plotId}`);
   };
 
-  const handleAddPlanting = () => {
-    navigate(`/plots/${selectedPlotId}/add-planting`);
+  // Función para mapear los valores de los tipos de suelo a su descripción correspondiente
+  const getGroundTypeDescription = (groundType) => {
+    switch (groundType) {
+      case 1:
+        return 'Arcilloso';
+      case 2:
+        return 'Arcilloso';
+      case 3:
+        return 'Limoso';
+      case 4:
+        return 'Aluvial';
+      case 5:
+        return 'Orgánico';
+      case 6:
+        return 'Volcánico';
+      default:
+        return 'Desconocido';
+    }
   };
 
   return (
@@ -72,13 +82,14 @@ const Plots = () => {
             <div className="card m-2 text-center">
               <div className="card-body">
                 <h5 className="card-title">{plot.plotName}</h5>
-                <p className="card-text">Tamaño: {plot.size}</p>
-                <p className="card-text">Tipo de suelo: {plot.groundType}</p>
+                <p className="card-text">Tamaño: {plot.size}ha</p>
+                <p className="card-text">Tipo de suelo: {getGroundTypeDescription(plot.groundType)}</p>
                 <div className='row'>
                   <Button
                     type="button"
                     className="btn m-1 col"
                     variant="outline-dark"
+                    size='sm'
                     onClick={() => handleNavHarvest(plot.idPlot)}
                   >
                     Cosechas
@@ -87,6 +98,7 @@ const Plots = () => {
                     type="button"
                     className="btn m-1 col"
                     variant="outline-dark"
+                    size='sm'
                     onClick={() => handleNavPlantings(plot.idPlot)}
                   >
                     Siembras
@@ -95,6 +107,7 @@ const Plots = () => {
                     type="button"
                     className="btn m-1 col"
                     variant="outline-dark"
+                    size='sm'
                     onClick={() => handleNavApplications(plot.idPlot)}
                   >
                     Aplicaciones
@@ -106,6 +119,7 @@ const Plots = () => {
                     type="button"
                     className="col btn m-1"
                     variant="outline-warning"
+                    size='sm'
                     onClick={() => handleEdit(plot)}
                   >
                     Editar
@@ -114,6 +128,7 @@ const Plots = () => {
                     type="button"
                     className="col btn m-1"
                     variant='outline-danger'
+                    size='sm'
                     onClick={() => handleDelete(plot.idPlot)}
                   >
                     Eliminar

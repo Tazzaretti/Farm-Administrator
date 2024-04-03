@@ -85,6 +85,9 @@ namespace Data.Implementations
                     UserRole = 1,
                     Phone = user.Phone,
                     Adress = user.Adress,
+                    Experience = user.Experience,
+                    Education = user.Education,
+                    RegisterDate = DateTime.Now,
                 };
 
                 await _context.Users.AddAsync(newUser);
