@@ -43,12 +43,7 @@ const Plantings = () => {
         <div className='col'>
           <PlantingsList plotId={idPlot} />
         </div>
-
       </div>
-
-
-
-
     </div>
   );
 };

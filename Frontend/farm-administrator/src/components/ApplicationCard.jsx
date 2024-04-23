@@ -31,6 +31,7 @@ const ApplicationCard = ({ application }) => {
           <Button 
             className='col btn m-1'
             variant="outline-dark" 
+            size='sm'
             onClick={handleShow}>
             Ver Detalles
           </Button>
@@ -38,6 +39,7 @@ const ApplicationCard = ({ application }) => {
             type="button"
             className="col btn m-1"
             variant="outline-warning"
+            size='sm'
             onClick={() => handleEdit(application)}
           >
             Editar

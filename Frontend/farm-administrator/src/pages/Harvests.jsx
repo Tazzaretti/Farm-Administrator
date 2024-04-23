@@ -31,8 +31,11 @@ const Harvests = () => {
       <div className='row text-center m-2'>
         <h1>Cosechas</h1>
       </div>
-      <HarvestManagement/>
+      <div className='row'>
+        <HarvestManagement/>
+      </div>
       <HarvestsList plotId={idPlot}/>
+
 
     </div>
   );

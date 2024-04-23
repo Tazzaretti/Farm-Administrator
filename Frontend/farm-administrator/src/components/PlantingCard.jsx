@@ -29,7 +29,8 @@ const PlantingCard = ({ planting }) => {
         <Card.Subtitle className="mb-2 text-muted">Temporada: {planting.season}</Card.Subtitle>
         <div className='row'>
           <Button 
-            variant="outline-dark" 
+            variant="outline-dark"
+            size='sm' 
             className='col btn m-1' 
             onClick={handleShow}>
             Ver Detalles
@@ -38,6 +39,7 @@ const PlantingCard = ({ planting }) => {
             type="button"
             className="col btn m-1"
             variant="outline-warning"
+            size='sm'
             onClick={() => handleEdit(planting)}
           >
             Editar

@@ -25,8 +25,8 @@ const HarvestList = ({ plotId }) => {
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <div className="row">
         {harvests.map((harvest) => (
-          <div key={harvest.idHarvest} className="col-md-4 mb-3">
-            <HarvestCard harvest={harvest} />
+          <div key={harvest.idHarvest} className="col-lg-3 col-md-4 col-sm-6 mb-3">
+            <HarvestCard harvest={harvest}/>
           </div>
         ))}
       </div>
