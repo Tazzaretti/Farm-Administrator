@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FarmAdministrator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98f001b026911e4ce251de98567902720bdaa7be")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+306ca2652de0bde53220b1a14e8c6c5b4df8ff6b")]
 [assembly: System.Reflection.AssemblyProductAttribute("FarmAdministrator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FarmAdministrator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

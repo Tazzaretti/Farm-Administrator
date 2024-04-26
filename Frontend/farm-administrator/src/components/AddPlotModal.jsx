@@ -6,7 +6,7 @@ const AddPlotModal = ({ show, handleClose, handleAddPlot }) => {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Agregar Nuevo Plot</Modal.Title>
+        <Modal.Title>Agregar nuevo l ote</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {/* Pasa la función handleAddPlot directamente al componente NewPlot */}

@@ -3,10 +3,13 @@ import { Button } from 'react-bootstrap';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 import useNotify from "../hooks/useNotify"
+import Map from '../pages/mapa';
 
 const NewPlot = ({ onSubmit }) => {
     const { successMessage, errorMessage } = useNotify();
     const {user} = useAuth();
+    const [latitude, setLatitude] = useState(0);
+    const [longitude, setLongitude] = useState(0);
     const [plotData, setPlotData] = useState({
         idPlot: 0,  // Puedes dejarlo como 0 si el servidor asigna un ID
         plotName: "",  // Reemplaza con el nombre real del lote
@@ -25,7 +28,7 @@ const NewPlot = ({ onSubmit }) => {
         [name]: value,
       }));
     };
-
+    
     const handleSubmit = async (e) => {
       e.preventDefault();
     
@@ -39,6 +42,11 @@ const NewPlot = ({ onSubmit }) => {
       } catch (error) {
         errorMessage("Ocurrio un error al crear el plot");
       }
+    };
+
+    const handleMapClick = (lat, lng) => {
+      setLatitude(lat); // Update state with the clicked latitude
+      setLongitude(lng); // Update state with the clicked longitude
     };
 
     return (
@@ -141,9 +149,17 @@ const NewPlot = ({ onSubmit }) => {
             <option value="10">Descanso rotativo</option>
           </select>
         </div>
+        <div className="col-md-6">
+        <label htmlFor="location" className="form-label">
+          Ubicación geográfica
+        </label>
+        <Map onMapClick={handleMapClick} />
+        <p>Latitud: {latitude}</p>
+        <p>Longitud: {longitude}</p>
+      </div>
         <div className="col-12">
           <Button variant="dark" type="submit">
-                Agregar lote
+            Agregar lote
           </Button>
         </div>
       </form>
