@@ -18,6 +18,7 @@ namespace Models.Models
         public decimal? Cost { get; set; }
         public int IdPlot { get; set; }
 
+        public virtual CropTypes CropNavigation { get; set; }
         public virtual Plots IdPlotNavigation { get; set; }
     }
 }

@@ -24,7 +24,9 @@ namespace Models.Models
         public int? State { get; set; }
         public int IdUser { get; set; }
 
+        public virtual GroundTypes GroundTypeNavigation { get; set; }
         public virtual Users IdUserNavigation { get; set; }
+        public virtual PlotStateTypes StateNavigation { get; set; }
         public virtual ICollection<Applications> Applications { get; set; }
         public virtual ICollection<Harvests> Harvests { get; set; }
         public virtual ICollection<Plantings> Plantings { get; set; }

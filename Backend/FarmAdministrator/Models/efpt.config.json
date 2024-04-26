@@ -2,7 +2,6 @@
    "CodeGenerationMode": 2,
    "ContextClassName": "FarmAdministratorContext",
    "ContextNamespace": null,
-   "DefaultDacpacSchema": null,
    "FilterSchemas": false,
    "IncludeConnectionString": false,
    "ModelNamespace": null,
@@ -20,7 +19,19 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[AdminTypes]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Applications]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CropTypes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[GroundTypes]",
          "ObjectType": 0
       },
       {
@@ -28,11 +39,43 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[history_fuel_consumption]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Machine_user_relationship]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Machinery]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Machinery_state_types]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[maintenance_repairs]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Plantings]",
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[Plot_StateTypes]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Plots]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ProductTypes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[RoleTypes]",
          "ObjectType": 0
       },
       {
@@ -44,11 +87,15 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[UserTypes]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Weather]",
          "ObjectType": 0
       }
    ],
-   "UiHint": "desktop-j0aabt1.FarmAdministrator.dbo",
+   "UiHint": null,
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,

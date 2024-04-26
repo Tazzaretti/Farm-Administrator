@@ -18,6 +18,7 @@ namespace FarmAdministrator
             builder.Services.AddScoped<IPlantingService, PlantingService>();
             builder.Services.AddScoped<IHarvestService, HarvestService>();
             builder.Services.AddScoped<IApplicationService, ApplicationService>();
+            builder.Services.AddScoped<IMachineryService, MachineryService>();
             //builder.Services.AddScoped<ISubject, Subject>();
 
             //patron de diseno
@@ -30,6 +31,7 @@ namespace FarmAdministrator
             builder.Services.AddScoped<IApplicationRepository, ApplicationRepository>();
             builder.Services.AddScoped<IHarvestRepository, HarvestRepository>();
             builder.Services.AddScoped<IPlantingRepository, PlantingRepository>();
+            builder.Services.AddScoped<IMachineryRepository, MachineryRepository>();
             //builder.Services.AddScoped<ISuscriptorRepository, SuscriptorRepository>();
 
 

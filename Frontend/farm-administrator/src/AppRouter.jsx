@@ -7,6 +7,7 @@ import PlotDetails from './pages/PlotDetails.jsx';
 import Plantings from './pages/Plantings.jsx'
 import Harvests from './pages/Harvests.jsx';
 import Applications from './pages/Applications.jsx';
+import Machinery from './pages/Machinery.jsx'
 
 const AppRouter = () => {
   return (
@@ -15,6 +16,9 @@ const AppRouter = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/plots" element={<Plots />} />
+        <Route path="/machinery" element={<Machinery/>}/>
+        <Route path="/machinery/maintenances"/>
+        <Route path="/machinery/consumes"/>
         <Route path="/plots/plantings/:idPlot" element={<Plantings />} />
         <Route path="/plots/harvests/:idPlot" element={<Harvests />} />
         <Route path="/plots/applications/:idPlot" element={<Applications />} />

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lwUauUeo/D2lkyN/QRV0pZq2cgClJYgBI3W30oaYBvmXR5MCXE2Lzu3EXw51eR7JTKQ0OQ4BetlW/EuD5eFDzQ==",
+  "dgSpecHash": "VzzMFdejygmjdbZy3Mtpr9GH+4wLvLcCKlNBg0QV+cuZF75aXv4P32ZIv8gWKopklUjJnmDI7BXIwKPGT99/ew==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\FarmAdministrator\\FarmAdministrator.csproj",
+  "projectFilePath": "C:\\Users\\tomas\\Desktop\\Proyectos\\FarmAdministrator\\Farm-Administrator\\Backend\\FarmAdministrator\\FarmAdministrator\\FarmAdministrator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tomas\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\tomas\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

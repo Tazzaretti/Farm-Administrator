@@ -1915,11 +1915,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj",
+      "projectUniqueName": "C:\\Users\\tomas\\Desktop\\Proyectos\\FarmAdministrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj",
       "projectName": "Models",
-      "projectPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj",
+      "projectPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\FarmAdministrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj",
       "packagesPath": "C:\\Users\\tomas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\obj\\",
+      "outputPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\FarmAdministrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tomas\\AppData\\Roaming\\NuGet\\NuGet.Config",

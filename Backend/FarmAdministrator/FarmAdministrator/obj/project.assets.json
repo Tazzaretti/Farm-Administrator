@@ -3358,11 +3358,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\FarmAdministrator\\FarmAdministrator.csproj",
+      "projectUniqueName": "C:\\Users\\tomas\\Desktop\\Proyectos\\FarmAdministrator\\Farm-Administrator\\Backend\\FarmAdministrator\\FarmAdministrator\\FarmAdministrator.csproj",
       "projectName": "FarmAdministrator",
-      "projectPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\FarmAdministrator\\FarmAdministrator.csproj",
+      "projectPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\FarmAdministrator\\Farm-Administrator\\Backend\\FarmAdministrator\\FarmAdministrator\\FarmAdministrator.csproj",
       "packagesPath": "C:\\Users\\tomas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\FarmAdministrator\\obj\\",
+      "outputPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\FarmAdministrator\\Farm-Administrator\\Backend\\FarmAdministrator\\FarmAdministrator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3379,14 +3379,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Data\\Data.csproj"
+            "C:\\Users\\tomas\\Desktop\\Proyectos\\FarmAdministrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\FarmAdministrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Data\\Data.csproj"
             },
-            "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Implementations\\Services.csproj": {
-              "projectPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Implementations\\Services.csproj"
+            "C:\\Users\\tomas\\Desktop\\Proyectos\\FarmAdministrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Implementations\\Services.csproj": {
+              "projectPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\FarmAdministrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Implementations\\Services.csproj"
             },
-            "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj"
+            "C:\\Users\\tomas\\Desktop\\Proyectos\\FarmAdministrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\tomas\\Desktop\\Proyectos\\FarmAdministrator\\Farm-Administrator\\Backend\\FarmAdministrator\\Models\\Models.csproj"
             }
           }
         }

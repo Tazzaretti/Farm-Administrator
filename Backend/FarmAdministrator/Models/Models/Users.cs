@@ -10,6 +10,7 @@ namespace Models.Models
         public Users()
         {
             Admins = new HashSet<Admins>();
+            MachineUserRelationship = new HashSet<MachineUserRelationship>();
             Plots = new HashSet<Plots>();
             Tokens = new HashSet<Tokens>();
         }
@@ -28,7 +29,10 @@ namespace Models.Models
         public DateTime? RegisterDate { get; set; }
         public int State { get; set; }
 
+        public virtual RoleTypes UserRoleNavigation { get; set; }
+        public virtual UserTypes UserTypeNavigation { get; set; }
         public virtual ICollection<Admins> Admins { get; set; }
+        public virtual ICollection<MachineUserRelationship> MachineUserRelationship { get; set; }
         public virtual ICollection<Plots> Plots { get; set; }
         public virtual ICollection<Tokens> Tokens { get; set; }
     }

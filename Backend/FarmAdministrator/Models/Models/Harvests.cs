@@ -21,6 +21,7 @@ namespace Models.Models
         public int? IdCrop { get; set; }
         public int IdPlot { get; set; }
 
+        public virtual CropTypes IdCropNavigation { get; set; }
         public virtual Plots IdPlotNavigation { get; set; }
     }
 }
