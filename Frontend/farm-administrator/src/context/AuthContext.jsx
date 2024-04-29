@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import {jwtDecode} from 'jwt-decode'
+import useNotify from '../hooks/useNotify'
 
 const AuthContext = createContext()
 const TOKEN_KEY = 'authToken'
@@ -13,8 +14,8 @@ export const AuthProvider = ({children}) => {
     tipoUsuario: '',
     token: ''
   })
-
-  const [isLogin, setIsLogin] = useState(false)
+  const { errorMessage, successMessage } = useNotify();
+  const [isLogin, setIsLogin] = useState(false);
 
   // Función para guardar el token en el Local Storage
   const saveTokenToLocalStorage = (token) => {
@@ -60,9 +61,11 @@ export const AuthProvider = ({children}) => {
       // Guardar el token en el Local Storage
       saveTokenToLocalStorage(response.data)
       setIsLogin(true)
+      successMessage('Accediste Correctamente')
       console.log(user.idUser); // <-- Cambia idUser a user.idUser
   
     } catch (error) {
+      errorMessage('Error al acceder')
       console.error('Error al iniciar sesión', error)
     }
   }

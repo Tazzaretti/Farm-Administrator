@@ -141,6 +141,20 @@ namespace Services.Implementations
             }
         }
 
+        public async Task<List<HistoryFuelConsumption>> GetConsumesForMachine (int machineId)
+        {
+            try
+            {
+                List<HistoryFuelConsumption> result = await _machineryRepository.GetConsumesForMachine(machineId);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error ocurred while trying to get consumptions for machine from service");
+                throw;
+            }
+        }
+
         public async Task<bool> AddMaintenance(AddMaintenanceRepairsDTO maintenance)
         {
             var newMaintenance = new MaintenanceRepairs

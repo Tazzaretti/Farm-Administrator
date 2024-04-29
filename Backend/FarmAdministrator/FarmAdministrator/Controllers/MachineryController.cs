@@ -152,6 +152,23 @@ namespace FarmAdministrator.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("GetMachineConsumes/{idMachine}")]
+
+        public async Task<IActionResult> GetMachineConsumes(int idMachine)
+        {
+            try
+            {
+                List<HistoryFuelConsumption> machineryConsumes = await _machineryService.GetConsumesForMachine(idMachine);
+                return Ok(machineryConsumes);
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+
         [HttpPost]
         [Route("AddMaintenance")]
 

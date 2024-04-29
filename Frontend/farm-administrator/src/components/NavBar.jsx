@@ -11,6 +11,7 @@ function NavBar() {
 
   const handleLogout = () => {
     logout();
+    setIsLogin(False);
   };
 
   return (
@@ -26,8 +27,8 @@ function NavBar() {
           </>
         ) : (
           <>
-            <Nav.Link as={Link} to="plots">Plots</Nav.Link>
-            <Nav.Link as={Link} to="admin">Admin</Nav.Link>
+            <Nav.Link as={Link} to="plots">Lotes</Nav.Link>
+            <Nav.Link as={Link} to="machinery">Maquinarias</Nav.Link>
             <Nav.Link as={Link} to="login" onClick={handleLogout}>Cerrar sesión</Nav.Link>
           </>
         )}

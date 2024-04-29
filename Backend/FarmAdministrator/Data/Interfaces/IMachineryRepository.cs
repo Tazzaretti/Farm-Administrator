@@ -16,6 +16,7 @@ namespace Data.Interfaces
         Task<bool> AddMachineUserRelationship(MachineUserRelationship machineUserRelationship);
         Task<List<Machinery>> GetMachinesByUserId(int userId);
         Task<bool> AddFuelConsumption(HistoryFuelConsumption consumption);
+        Task<List<HistoryFuelConsumption>> GetConsumesForMachine(int machineId);
         Task<bool> AddMaintenance(MaintenanceRepairs maintenance);
     }
 }

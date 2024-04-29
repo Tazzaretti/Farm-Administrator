@@ -4,9 +4,10 @@ import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import { useAuth } from '../context/AuthContext';
 import { Navigate, useNavigate } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-  const { login } = useAuth();  // Obtenemos la función de inicio de sesión del contexto
+  const { login, isLogin } = useAuth();  // Obtenemos la función de inicio de sesión del contexto
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -16,11 +17,18 @@ const Login = () => {
 
     // Llamamos a la función de inicio de sesión con el email y la contraseña
     await login(email, password);
-
-    navigate('/plots')
-
   };
   
+  const handleNavRegister = () =>{
+    navigate('/register')
+  }
+
+  useEffect(() => {
+    if (isLogin) {
+      navigate('/plots')
+    }
+  },[isLogin])
+
   return (
     <div className="d-flex align-items-center justify-content-center" style={{ height: '100vh' }}>
       <Card style={{ width: '20rem' }}>
@@ -50,9 +58,16 @@ const Login = () => {
               />
             </Form.Group>
             
-            <Button variant="dark" type="submit">
-              Submit
-            </Button>
+            <div>
+              <Button className="btn m-1 col-5" size='md' variant="outline-success" type="submit">
+                Ingresar
+              </Button>
+              <Button className="btn m-1 col-5" size='md' variant="outline-warning" type="button" onClick={handleNavRegister}>
+                Registrarse
+              </Button>
+            </div>
+            
+            
           </Form>
         </Card.Body>
       </Card>

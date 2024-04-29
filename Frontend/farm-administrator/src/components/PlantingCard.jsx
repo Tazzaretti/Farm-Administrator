@@ -24,12 +24,12 @@ const PlantingCard = ({ planting }) => {
 
   return (
     <Card className="card m-2 text-center">
+      <Card.Header>{planting.startDate ? planting.startDate.split('T')[0] : "No hay fecha de inicio"}</Card.Header>
       <Card.Body>
-        <Card.Title>{planting.startDate ? planting.startDate.split('T')[0] : "No hay fecha de inicio"}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">Temporada: {planting.season}</Card.Subtitle>
         <div className='row'>
           <Button 
-            variant="outline-dark"
+            variant="outline-light"
             size='sm' 
             className='col btn m-1' 
             onClick={handleShow}>

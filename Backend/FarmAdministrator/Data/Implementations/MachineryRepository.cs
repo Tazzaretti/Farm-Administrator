@@ -236,6 +236,30 @@ namespace Data.Implementations
             }
         }
 
+        public async Task<List<HistoryFuelConsumption>> GetConsumesForMachine(int machineId)
+        {
+            var machineExists = await _context.Machinery.AnyAsync(u => u.IdMachine == machineId);
+
+            if (machineExists == null)
+            {
+                throw new Exception("The machine doesn't exists");
+            }
+
+            
+            try
+            {
+                List<Models.Models.HistoryFuelConsumption> machineConsumes = await _context.HistoryFuelConsumption
+                .Where(p => p.IdMachine == machineId).ToListAsync();
+
+                return machineConsumes;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error ocurred while trying to get consumptions for machine");
+                throw;
+            }
+        }
+
 
         public async Task<bool> AddMaintenance(MaintenanceRepairs maintenance)
         {

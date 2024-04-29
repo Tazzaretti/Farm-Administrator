@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 import useNotify from "../hooks/useNotify"
-import Map from '../pages/mapa';
+import Map from './Map';
 
 const NewPlot = ({ onSubmit }) => {
     const { successMessage, errorMessage } = useNotify();
@@ -12,7 +12,9 @@ const NewPlot = ({ onSubmit }) => {
     const [longitude, setLongitude] = useState(0);
     const [plotData, setPlotData] = useState({
         idPlot: 0,  // Puedes dejarlo como 0 si el servidor asigna un ID
-        plotName: "",  // Reemplaza con el nombre real del lote
+        plotName: "",
+        longitude: 0,
+        latitude: 0, // Reemplaza con el nombre real del lote
         size: 0,  // Reemplaza con el tamaño real del lote
         groundType: 1,  // Reemplaza con el tipo de suelo real
         owner: "",  // Reemplaza con el propietario real
@@ -47,6 +49,8 @@ const NewPlot = ({ onSubmit }) => {
     const handleMapClick = (lat, lng) => {
       setLatitude(lat); // Update state with the clicked latitude
       setLongitude(lng); // Update state with the clicked longitude
+      setPlotData(prevData => ({...prevData, latitude:lat, longitude:lng}));
+      console.log(plotData);
     };
 
     return (
@@ -150,13 +154,16 @@ const NewPlot = ({ onSubmit }) => {
           </select>
         </div>
         <div className="col-md-6">
-        <label htmlFor="location" className="form-label">
-          Ubicación geográfica
-        </label>
-        <Map onMapClick={handleMapClick} />
-        <p>Latitud: {latitude}</p>
-        <p>Longitud: {longitude}</p>
-      </div>
+          <label htmlFor="location" className="form-label">
+            Ubicación geográfica
+          </label>
+          <label htmlFor="locationwarning" className="form-label">
+            Una vez creado el lote no podra modificarse
+          </label>
+          <Map onMapClick={handleMapClick} />
+          <p>Latitud: {latitude}</p>
+          <p>Longitud: {longitude}</p>
+        </div>
         <div className="col-12">
           <Button variant="dark" type="submit">
             Agregar lote

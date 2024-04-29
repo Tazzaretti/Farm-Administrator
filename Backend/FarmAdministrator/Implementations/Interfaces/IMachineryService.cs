@@ -16,6 +16,7 @@ namespace Services.Interfaces
         Task<bool> UpdateMachinery(UpdateMachineryDTO machinery);
         Task<List<Machinery>> GetMachinesByUserId(int userId);
         Task<bool> AddFuelConsumption(AddFuelConsumptionDTO consumption);
+        Task<List<HistoryFuelConsumption>> GetConsumesForMachine(int machineId);
         Task<bool> AddMaintenance(AddMaintenanceRepairsDTO maintenance);
     }
 }

@@ -17,6 +17,8 @@ namespace Models.Models
 
         public int IdPlot { get; set; }
         public string PlotName { get; set; }
+        public decimal? Longitude { get; set; }
+        public decimal? Latitude { get; set; }
         public int? Size { get; set; }
         public int? GroundType { get; set; }
         public string Owner { get; set; }

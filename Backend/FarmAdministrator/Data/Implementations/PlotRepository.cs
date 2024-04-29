@@ -32,6 +32,8 @@ namespace Data.Implementations
                     {
                         IdUser = ifUserExist.IdUser,
                         PlotName = plot.PlotName,
+                        Latitude = plot.Latitude,
+                        Longitude = plot.Longitude,
                         Size = plot.Size,
                         GroundType = plot.GroundType,
                         Owner = plot.Owner,
@@ -93,6 +95,8 @@ namespace Data.Implementations
                 {
                     IdUser = plotById.IdUser,
                     PlotName = plotById.PlotName,
+                    Latitude = plotById.Latitude,
+                    Longitude = plotById.Longitude,
                     Size = plotById.Size,
                     GroundType = plotById.GroundType,
                     Owner = plotById.Owner,
@@ -114,6 +118,8 @@ namespace Data.Implementations
             if (ifExists != null)
             {
                 ifExists.PlotName = plot.PlotName;
+                ifExists.Latitude = plot.Latitude; 
+                ifExists.Longitude = plot.Longitude;
                 ifExists.Size = plot.Size;
                 ifExists.GroundType = plot.GroundType;
                 ifExists.Owner = plot.Owner;
@@ -152,6 +158,8 @@ namespace Data.Implementations
                     // Asignar las propiedades necesarias de la entidad a las del DTO
                     IdPlot = plot.IdPlot,
                     PlotName = plot.PlotName,
+                    Latitude = plot.Latitude,
+                    Longitude = plot.Longitude,
                     Size = plot.Size,
                     GroundType = plot.GroundType,
                     Owner = plot.Owner,

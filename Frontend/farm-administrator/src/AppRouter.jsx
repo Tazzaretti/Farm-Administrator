@@ -8,6 +8,7 @@ import Plantings from './pages/Plantings.jsx'
 import Harvests from './pages/Harvests.jsx';
 import Applications from './pages/Applications.jsx';
 import Machinery from './pages/Machinery.jsx'
+import Consumes from './pages/Consumes.jsx';
 
 const AppRouter = () => {
   return (
@@ -18,7 +19,7 @@ const AppRouter = () => {
         <Route path="/plots" element={<Plots />} />
         <Route path="/machinery" element={<Machinery/>}/>
         <Route path="/machinery/maintenances"/>
-        <Route path="/machinery/consumes"/>
+        <Route path="/machinery/consumes/:idMachine" element={<Consumes/>}/>
         <Route path="/plots/plantings/:idPlot" element={<Plantings />} />
         <Route path="/plots/harvests/:idPlot" element={<Harvests />} />
         <Route path="/plots/applications/:idPlot" element={<Applications />} />

@@ -419,6 +419,14 @@ namespace Models.Models
 
                 entity.Property(e => e.IdUser).HasColumnName("id_user");
 
+                entity.Property(e => e.Latitude)
+                    .HasColumnType("decimal(9, 6)")
+                    .HasColumnName("latitude");
+
+                entity.Property(e => e.Longitude)
+                    .HasColumnType("decimal(9, 6)")
+                    .HasColumnName("longitude");
+
                 entity.Property(e => e.Notes).HasColumnName("notes");
 
                 entity.Property(e => e.Owner)

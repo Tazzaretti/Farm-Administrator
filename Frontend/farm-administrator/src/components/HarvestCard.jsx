@@ -29,7 +29,7 @@ const HarvestCard = ({ harvest }) => {
         <Card.Subtitle className="mb-2 text-muted">Temporada: {harvest.season}</Card.Subtitle>
         <div className='row'>
           <Button 
-            variant="outline-dark" 
+            variant="outline-light" 
             size='sm'
             className='col btn m-1'
             onClick={handleShow}>

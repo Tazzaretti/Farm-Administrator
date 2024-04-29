@@ -28,7 +28,7 @@ const PlantingManagement = () => {
 
   return (
     <div>
-      <Button variant="outline-success" className='m-2' onClick={() => setShowAddPlantingModal(true)}>
+      <Button variant="outline-light" className='m-2' onClick={() => setShowAddPlantingModal(true)}>
         Agregar Siembra
       </Button>
 

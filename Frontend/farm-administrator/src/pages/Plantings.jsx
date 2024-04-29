@@ -33,7 +33,7 @@ const Plantings = () => {
   return (
     <div>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      <div className='row text-center'>
+      <div className='row text-center m-2'>
         <h1>Siembras</h1>
       </div>
       <div className='row'>

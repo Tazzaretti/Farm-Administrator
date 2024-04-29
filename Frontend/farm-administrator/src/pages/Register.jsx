@@ -40,6 +40,7 @@ const Register = (onSubmit) => {
       successMessage('El usuario se creo con exito');
     } catch (error) {
       console.log(error)
+      errorMessage('Hubo un error al crear el usuario', error)
     }
   };
 
@@ -56,148 +57,150 @@ const Register = (onSubmit) => {
   };
 
   return (
-    <form className="row g-3" onSubmit={handleSubmit}>
+    <div className="d-flex align-items-center justify-content-center m-3" style={{ height: '100vh' }}>
+      <form className="row g-3" onSubmit={handleSubmit}>
 
-    <div className="col-md-6">
-      <label htmlFor="email" className="form-label">
-        Email
-      </label>
-      <input
-        type="text"
-        className="form-control"
-        id="email"
-        name="email"
-        placeholder='Ingresar email'
-        value={userData.email}
-        onChange={handleChange}
-      />
-    </div>
+        <div className="col-md-6">
+          <label htmlFor="email" className="form-label">
+            Email
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="email"
+            name="email"
+            placeholder='Ingresar email'
+            value={userData.email}
+            onChange={handleChange}
+          />
+        </div>
 
-    <div className="col-md-6">
-      <label htmlFor="notes" className="form-label">
-        Password
-      </label>
-      <input
-        type="password"
-        className="form-control"
-        id="password"
-        name="password"
-        placeholder='Ingrese su clave'
-        value={userData.password}
-        onChange={handleChange}
-      />
-    </div>
+        <div className="col-md-6">
+          <label htmlFor="notes" className="form-label">
+            Password
+          </label>
+          <input
+            type="password"
+            className="form-control"
+            id="password"
+            name="password"
+            placeholder='Ingrese su clave'
+            value={userData.password}
+            onChange={handleChange}
+          />
+        </div>
 
-    <div className="col-md-6">
-      <label htmlFor="name" className="form-label">
-        Nombre
-      </label>
-      <input
-        type="text"
-        className="form-control"
-        id="name"
-        name="name"
-        placeholder='Nombre'
-        value={userData.name}
-        onChange={handleChange}
-      />
-    </div>
+        <div className="col-md-6">
+          <label htmlFor="name" className="form-label">
+            Nombre
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="name"
+            name="name"
+            placeholder='Nombre'
+            value={userData.name}
+            onChange={handleChange}
+          />
+        </div>
 
-    <div className="col-md-6">
-      <label htmlFor="lastName" className="form-label">
-        Apellido
-      </label>
-      <input
-        type="text"
-        className="form-control"
-        id="lastName"
-        name="lastName"
-        value={userData.lastName}
-        onChange={handleChange}
-      />
-    </div>
+        <div className="col-md-6">
+          <label htmlFor="lastName" className="form-label">
+            Apellido
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="lastName"
+            name="lastName"
+            value={userData.lastName}
+            onChange={handleChange}
+          />
+        </div>
 
-    <div className="col-md-6">
-      <label htmlFor="phone" className="form-label">
-        Telefono
-      </label>
-      <input
-        type="number"
-        className="form-control"
-        id="phone"
-        name="phone"
-        value={userData.phone}
-        onChange={handleChange}
-      />
-    </div>
+        <div className="col-md-6">
+          <label htmlFor="phone" className="form-label">
+            Telefono
+          </label>
+          <input
+            type="number"
+            className="form-control"
+            id="phone"
+            name="phone"
+            value={userData.phone}
+            onChange={handleChange}
+          />
+        </div>
 
-    <div className="col-md-6">
-      <label htmlFor="adress" className="form-label">
-        Direccion
-      </label>
-      <input
-        type="text"
-        className="form-control"
-        id="adress"
-        name="adress"
-        value={userData.adress}
-        onChange={handleChange}
-      />
-    </div>
+        <div className="col-md-6">
+          <label htmlFor="adress" className="form-label">
+            Direccion
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="adress"
+            name="adress"
+            value={userData.adress}
+            onChange={handleChange}
+          />
+        </div>
 
-    <div className="col-md-6">
-      <label htmlFor="experience" className="form-label">
-        Experiencia
-      </label>
-      <input
-        type="text"
-        className="form-control"
-        id="experience"
-        name="experience"
-        value={userData.experience}
-        onChange={handleChange}
-      />
-    </div>
+        <div className="col-md-6">
+          <label htmlFor="experience" className="form-label">
+            Experiencia
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="experience"
+            name="experience"
+            value={userData.experience}
+            onChange={handleChange}
+          />
+        </div>
 
-    <div className="col-md-6">
-      <label htmlFor="education" className="form-label">
-        Educacion
-      </label>
-      <input
-        type="text"
-        className="form-control"
-        id="education"
-        name="education"
-        value={userData.education}
-        onChange={handleChange}
-      />
-    </div>
+        <div className="col-md-6">
+          <label htmlFor="education" className="form-label">
+            Educacion
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="education"
+            name="education"
+            value={userData.education}
+            onChange={handleChange}
+          />
+        </div>
 
-    <div className="col-md-6">
-      <label htmlFor="userType" className="form-label">
-        Ocupacion
-      </label>
-      <select
-        id="userType"
-        className="form-select"
-        name="userType"
-        value={userData.userType}
-        onChange={handleChange}
-      >
-        <option value="1">Agricultor</option>
-        <option value="2">Ingeniero</option>
-        <option value="3">Investigador</option>
-        <option value="4">Transportista</option>
-        <option value="5">Empleado</option>
-      </select>
+        <div className="col-md-6">
+          <label htmlFor="userType" className="form-label">
+            Ocupacion
+          </label>
+          <select
+            id="userType"
+            className="form-select"
+            name="userType"
+            value={userData.userType}
+            onChange={handleChange}
+          >
+            <option value="1">Agricultor</option>
+            <option value="2">Ingeniero</option>
+            <option value="3">Investigador</option>
+            <option value="4">Transportista</option>
+            <option value="5">Empleado</option>
+          </select>
+        </div>
+
+        <div className="col-12">
+          <Button variant="outline-light" type="submit">
+                Registrarse
+          </Button>
+        </div>
+      </form>
     </div>
-    
-    <div className="col-12">
-      <Button variant="dark" type="submit">
-            Registrarse
-      </Button>
-    </div>
-  </form>   
   );
 };
 
