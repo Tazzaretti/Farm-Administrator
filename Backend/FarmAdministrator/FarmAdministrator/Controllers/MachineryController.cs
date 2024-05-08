@@ -191,5 +191,21 @@ namespace FarmAdministrator.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+
+        [HttpGet]
+        [Route("GetMachineMaintenances/{idMachine}")]
+
+        public async Task<IActionResult> GetMachineMaintenances(int idMachine)
+        {
+            try
+            {
+                List<MaintenanceRepairs> machineryMaintenances = await _machineryService.GetMaintenancesForMachine(idMachine);
+                return Ok(machineryMaintenances);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
     }
 }

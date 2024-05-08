@@ -10,13 +10,26 @@ const Login = () => {
   const { login, isLogin } = useAuth();  // Obtenemos la función de inicio de sesión del contexto
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [validated, setValidated] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+    const form = e.currentTarget;
 
+    if (form.checkValidity() === false) {
+      e.stopPropagation();
+      e.preventDefault();
+    } else {
+      try {
+        await login(email, password);
+        console.log('después de enviar datos');
+      } catch (error) {
+        console.error('Error al iniciar sesion', error);
+      }
+    }
+    setValidated(true); // Marca el formulario como validado
     // Llamamos a la función de inicio de sesión con el email y la contraseña
-    await login(email, password);
+    
   };
   
   const handleNavRegister = () =>{
@@ -34,28 +47,29 @@ const Login = () => {
       <Card style={{ width: '20rem' }}>
         <Card.Header as="h5">Login</Card.Header>
         <Card.Body>
-          <Form onSubmit={handleLogin}>
+          <Form noValidate validated={validated} onSubmit={handleLogin}>
             <Form.Group controlId="formBasicEmail" className="mb-3">
               <Form.Label>Email address</Form.Label>
               <Form.Control
+                required
                 type="email"
                 placeholder="Enter email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
+              <Form.Control.Feedback type="invalid">Ingrese un Email valido.</Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword" className="mb-3">
               <Form.Label>Password</Form.Label>
               <Form.Control
+                required
                 type="password"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              <Form.Control.Feedback type="invalid">Ingrese una clave valida.</Form.Control.Feedback>
             </Form.Group>
             
             <div>

@@ -69,7 +69,6 @@ const Plots = () => {
 
   return (
     <div>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
       <div className='row text-center m-2'>
         <h1>Lotes</h1>
       </div>

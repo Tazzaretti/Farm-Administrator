@@ -18,5 +18,6 @@ namespace Data.Interfaces
         Task<bool> AddFuelConsumption(HistoryFuelConsumption consumption);
         Task<List<HistoryFuelConsumption>> GetConsumesForMachine(int machineId);
         Task<bool> AddMaintenance(MaintenanceRepairs maintenance);
+        Task<List<MaintenanceRepairs>> GetMaintenancesForMachine(int machineId);
     }
 }

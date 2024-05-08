@@ -1,13 +1,14 @@
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
-import React, { useState, useEffect } from 'react';
-import { useData } from '../context/DataContext';
+import { useState } from 'react';
 import axios from 'axios';
 import useNotify from '../hooks/useNotify';
+import { useNavigate } from 'react-router-dom';
 
 const Register = (onSubmit) => {
-  const { successMessage, errorMessage } = useNotify(); // Importa las funciones de notificación
+  const { successMessage, errorMessage } = useNotify(); 
+  const [validated, setValidated] = useState(false);
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
     idUser: 0,
     password: '',
@@ -17,7 +18,7 @@ const Register = (onSubmit) => {
     userType: 0,
     email: '',
     phone: 0,
-    adress: '',
+    address: '',
     experience: '',
     education: '',
     state: 0,
@@ -31,40 +32,44 @@ const Register = (onSubmit) => {
     }));
   };
 
-
   const RegisterFunction = async () => {
     console.log('dentro de data context')
     console.log(userData);
     try {
       const response = await axios.post('https://localhost:7182/api/Auth/Registro', userData);
-      successMessage('El usuario se creo con exito');
+      successMessage('El usuario se creó con éxito');
     } catch (error) {
       console.log(error)
       errorMessage('Hubo un error al crear el usuario', error)
     }
   };
 
-
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Evita la recarga de la página
-    console.log('dentro de handle submit');
-    try {
-      await RegisterFunction(userData);
-      console.log('después de enviar datos');
-    } catch (error) {
-      console.error('Error al crear usuario', error);
+    e.preventDefault();
+    const form = e.currentTarget;
+
+    if (form.checkValidity() === false) {
+      e.stopPropagation();
+    } else {
+      try {
+        await RegisterFunction();
+        navigate('/login')
+        console.log('después de enviar datos');
+      } catch (error) {
+        console.error('Error al crear usuario', error);
+      }
     }
+
+    setValidated(true);
   };
 
   return (
-    <div className="d-flex align-items-center justify-content-center m-3" style={{ height: '100vh' }}>
-      <form className="row g-3" onSubmit={handleSubmit}>
-
-        <div className="col-md-6">
-          <label htmlFor="email" className="form-label">
-            Email
-          </label>
-          <input
+    <div className="d-flex align-items-center justify-content-center m-3" style={{ marginTop: '80px' }}>
+      <Form noValidate validated={validated} onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            required
             type="text"
             className="form-control"
             id="email"
@@ -73,13 +78,13 @@ const Register = (onSubmit) => {
             value={userData.email}
             onChange={handleChange}
           />
-        </div>
+          <Form.Control.Feedback type="invalid">Ingrese un Email valido.</Form.Control.Feedback>
+        </Form.Group>
 
-        <div className="col-md-6">
-          <label htmlFor="notes" className="form-label">
-            Password
-          </label>
-          <input
+        <Form.Group className="mb-3">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            required
             type="password"
             className="form-control"
             id="password"
@@ -88,13 +93,13 @@ const Register = (onSubmit) => {
             value={userData.password}
             onChange={handleChange}
           />
-        </div>
+          <Form.Control.Feedback type="invalid">Ingrese una clave valida.</Form.Control.Feedback>
+        </Form.Group>
 
-        <div className="col-md-6">
-          <label htmlFor="name" className="form-label">
-            Nombre
-          </label>
-          <input
+        <Form.Group className="mb-3">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            required
             type="text"
             className="form-control"
             id="name"
@@ -103,13 +108,13 @@ const Register = (onSubmit) => {
             value={userData.name}
             onChange={handleChange}
           />
-        </div>
+          <Form.Control.Feedback type="invalid">Ingrese un nombre valido.</Form.Control.Feedback>
+        </Form.Group>
 
-        <div className="col-md-6">
-          <label htmlFor="lastName" className="form-label">
-            Apellido
-          </label>
-          <input
+        <Form.Group className="mb-3">
+          <Form.Label>Last Name</Form.Label>
+          <Form.Control
+            required
             type="text"
             className="form-control"
             id="lastName"
@@ -117,13 +122,13 @@ const Register = (onSubmit) => {
             value={userData.lastName}
             onChange={handleChange}
           />
-        </div>
+          <Form.Control.Feedback type="invalid">Ingrese un apellido valido.</Form.Control.Feedback>
+        </Form.Group>
 
-        <div className="col-md-6">
-          <label htmlFor="phone" className="form-label">
-            Telefono
-          </label>
-          <input
+        <Form.Group className="mb-3" >
+          <Form.Label>Phone</Form.Label>
+          <Form.Control
+            required
             type="number"
             className="form-control"
             id="phone"
@@ -131,13 +136,13 @@ const Register = (onSubmit) => {
             value={userData.phone}
             onChange={handleChange}
           />
-        </div>
+          <Form.Control.Feedback type="invalid">Ingrese un numero de telefono valido.</Form.Control.Feedback>
+        </Form.Group>
 
-        <div className="col-md-6">
-          <label htmlFor="adress" className="form-label">
-            Direccion
-          </label>
-          <input
+        <Form.Group className="mb-3">
+          <Form.Label>Address</Form.Label>
+          <Form.Control
+            required
             type="text"
             className="form-control"
             id="adress"
@@ -145,13 +150,13 @@ const Register = (onSubmit) => {
             value={userData.adress}
             onChange={handleChange}
           />
-        </div>
+          <Form.Control.Feedback type="invalid">Ingrese una direccion valida.</Form.Control.Feedback>
+        </Form.Group>
 
-        <div className="col-md-6">
-          <label htmlFor="experience" className="form-label">
-            Experiencia
-          </label>
-          <input
+        <Form.Group className="mb-3">
+          <Form.Label>Experience</Form.Label>
+          <Form.Control
+            required
             type="text"
             className="form-control"
             id="experience"
@@ -159,13 +164,13 @@ const Register = (onSubmit) => {
             value={userData.experience}
             onChange={handleChange}
           />
-        </div>
+          <Form.Control.Feedback type="invalid">Ingrese experiencia valida.</Form.Control.Feedback>
+        </Form.Group>
 
-        <div className="col-md-6">
-          <label htmlFor="education" className="form-label">
-            Educacion
-          </label>
-          <input
+        <Form.Group className="mb-3">
+          <Form.Label>Education</Form.Label>
+          <Form.Control
+            required
             type="text"
             className="form-control"
             id="education"
@@ -173,33 +178,33 @@ const Register = (onSubmit) => {
             value={userData.education}
             onChange={handleChange}
           />
-        </div>
+          <Form.Control.Feedback type="invalid">Ingrese educacion valida.</Form.Control.Feedback>
+        </Form.Group>
 
-        <div className="col-md-6">
-          <label htmlFor="userType" className="form-label">
-            Ocupacion
-          </label>
-          <select
+        <Form.Group className="mb-3">
+          <Form.Label>User Type</Form.Label>
+          <Form.Select
+            required
             id="userType"
-            className="form-select"
             name="userType"
+            className="form-select"
             value={userData.userType}
             onChange={handleChange}
           >
+            <option value="">Select user type</option>
             <option value="1">Agricultor</option>
             <option value="2">Ingeniero</option>
             <option value="3">Investigador</option>
             <option value="4">Transportista</option>
             <option value="5">Empleado</option>
-          </select>
-        </div>
+          </Form.Select>
+          <Form.Control.Feedback type="invalid">Ingrese un tipo de usuario.</Form.Control.Feedback>
+        </Form.Group>
 
-        <div className="col-12">
-          <Button variant="outline-light" type="submit">
-                Registrarse
-          </Button>
-        </div>
-      </form>
+        <Button variant="outline-success" type="submit">
+          Register
+        </Button>
+      </Form>
     </div>
   );
 };

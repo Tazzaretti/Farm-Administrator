@@ -62,7 +62,7 @@ export const AuthProvider = ({children}) => {
       saveTokenToLocalStorage(response.data)
       setIsLogin(true)
       successMessage('Accediste Correctamente')
-      console.log(user.idUser); // <-- Cambia idUser a user.idUser
+      //console.log(user.idUser); // <-- Cambia idUser a user.idUser
   
     } catch (error) {
       errorMessage('Error al acceder')

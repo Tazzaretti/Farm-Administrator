@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useData } from '../context/DataContext';
 import PlotManagement from '../components/AddPlotModal';
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Modal, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import EditPlot from '../components/EditPlot';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 import EditMachine from '../components/EditMachine';
+import MachineryManagement from '../components/AddMachineryModal';
 
 
 
@@ -85,23 +86,28 @@ const Machinery = () => {
   return (
     <div>
         <div className='row text-center m-2'>
-        <h1>Maquinarias</h1>
-      </div>
+          <h1>Maquinarias</h1>
+        </div>
+        <div className='row'>
+          <MachineryManagement />
+        </div>
+
       <div className="row">
         {machines.map((machine) => (
           <div key={machine.idMachine} className="col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div className="card m-2 text-center">
-                  <div className="card-body">
-                    <h5 className="card-title">{machine.name}</h5>
-                    <p className="card-text">Tipo: {machine.machineType}</p>
-                    <p className="card-text">Marca: {machine.brand}</p>
-                    <p className="card-text">Modelo: {machine.model}</p>
-
+                <Card className="card m-2 text-center">
+                <Card.Header>
+                  <Card.Title>{machine.name}</Card.Title>
+                </Card.Header>
+                  <Card.Body className="card-body">
+                    <Card.Text className="card-text">Tipo: {machine.machineType}</Card.Text>
+                    <Card.Text className="card-text">Marca: {machine.brand}</Card.Text>
+                    <Card.Text className="card-text">Modelo: {machine.model}</Card.Text>
                     <div className='row'>
                       <Button
                         type="button"
                         className="btn m-1 col"
-                        variant="outline-dark"
+                        variant="outline-light"
                         size='sm'
                         onClick={() => handleNavConsumes(machine.idMachine)}
                       >
@@ -110,7 +116,7 @@ const Machinery = () => {
                       <Button
                         type="button"
                         className="btn m-1 col"
-                        variant="outline-dark"
+                        variant="outline-light"
                         size='sm'
                         onClick={() => handleNavMaintenances(machine.idMachine)}
                       >
@@ -139,8 +145,8 @@ const Machinery = () => {
                         Eliminar
                       </Button>
                     </div>
-                  </div>
-                </div>
+                  </Card.Body>
+                </Card>
                 {/* Modal de edición dentro de cada tarjeta */}
                 <Modal show={showEditModal} onHide={() => setShowEditModal(false)}>
                     <Modal.Header closeButton>

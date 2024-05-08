@@ -177,5 +177,18 @@ namespace Services.Implementations
                 throw;
             }
         }
+        public async Task<List<MaintenanceRepairs>> GetMaintenancesForMachine(int machineId)
+        {
+            try
+            {
+                List<MaintenanceRepairs> result = await _machineryRepository.GetMaintenancesForMachine(machineId);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error ocurred while trying to get maintenances/repairs for machine from service");
+                throw;
+            }
+        }
     }
 }

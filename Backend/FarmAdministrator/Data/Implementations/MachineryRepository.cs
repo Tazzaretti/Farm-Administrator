@@ -283,5 +283,28 @@ namespace Data.Implementations
             }
 
         }
+        public async Task<List<MaintenanceRepairs>> GetMaintenancesForMachine(int machineId)
+        {
+            var machineExists = await _context.Machinery.AnyAsync(u => u.IdMachine == machineId);
+
+            if (machineExists == null)
+            {
+                throw new Exception("The machine doesn't exists");
+            }
+
+
+            try
+            {
+                List<Models.Models.MaintenanceRepairs> machineMaintenances = await _context.MaintenanceRepairs
+                .Where(p => p.IdMachine == machineId).ToListAsync();
+
+                return machineMaintenances;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error ocurred while trying to get maitenances/repairs for machine");
+                throw;
+            }
+        }
     }
 }
