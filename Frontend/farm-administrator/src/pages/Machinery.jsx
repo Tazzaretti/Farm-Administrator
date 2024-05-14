@@ -10,37 +10,17 @@ import EditMachine from '../components/EditMachine';
 import MachineryManagement from '../components/AddMachineryModal';
 
 
-
 const Machinery = () => {
-  const { plots, getPlots, deletePlot } = useData();
+  const { getMachines, machines } = useData();
   const [newMachineName, setNewMachineName] = useState('');
   const [error, setError] = useState(null);
   const [selectedMachineId, setSelectedMachineId] = useState(null);
   const [selectedMachineData, setSelectedMachineData] = useState(null);
   const navigate = useNavigate();
   const [showEditModal, setShowEditModal] = useState(false);
-  const [machines, setMachines] = useState([]);
   const { user, isLogin } = useAuth();
 
-  const getMachines = async () => {
-    try {
-      if (isLogin) {
-        const response = await axios.get(
-          `https://localhost:7182/api/Machinery/GetByUser/${user.idUser}`,
-          {
-            headers: {
-              Authorization: `Bearer ${user.token}`,
-            },
-          }
-        );
-        console.log(response.data);
-        setMachines([...response.data]);
-      }
-    } catch (error) {
-      console.error('Error al obtener machines', error);
-    }
-  };
-
+  
   const deleteMachine = async (machineId) => {
     try {
       if (isLogin) {
@@ -61,9 +41,6 @@ const Machinery = () => {
     }
   };
 
-  useEffect(() => {
-    getMachines();
-  }, [isLogin, user]);
 
 
   const handleEdit = (machine) => {

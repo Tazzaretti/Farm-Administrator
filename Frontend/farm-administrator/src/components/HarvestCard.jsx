@@ -24,9 +24,10 @@ const HarvestCard = ({ harvest }) => {
 
   return (
     <Card className="card m-2 text-center">
+      <Card.Header><Card.Title>Fecha de inicio: {harvest.startDate.split('T')[0]}</Card.Title></Card.Header>
       <Card.Body>
-        <Card.Title>{harvest.startDate.split('T')[0]}</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Temporada: {harvest.season}</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted">Cultivo: {harvest.crop}</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted">Metodo: {harvest.method}</Card.Subtitle>
         <div className='row'>
           <Button 
             variant="outline-light" 
@@ -63,11 +64,10 @@ const HarvestCard = ({ harvest }) => {
           <p><strong>Notas:</strong> {harvest.notes}</p>
           <p><strong>Tamaño:</strong> {harvest.size}</p>
           <p><strong>Costo:</strong> {harvest.cost}</p>
-          <p><strong>ID del Lote:</strong> {harvest.idPlot}</p>
           {/* Agrega más detalles según sea necesario */}
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="outline-warning" onClick={handleClose}>
             Cerrar
           </Button>
         </Modal.Footer>
@@ -75,7 +75,7 @@ const HarvestCard = ({ harvest }) => {
       {/* Modal de edición dentro de cada tarjeta */}
       <Modal show={showEditModal} onHide={() => setShowEditModal(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>Editar Harvest</Modal.Title>
+          <Modal.Title>Editar Cosecha</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <EditHarvest harvest={selectedHarvestData} onSubmit={() => setShowEditModal(false)} />

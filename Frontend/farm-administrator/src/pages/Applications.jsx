@@ -6,7 +6,7 @@ import ApplicationManagement from '../components/AddApplicationModal';
 import ApplicationList from '../components/ApplicationList'
 
 const PlotDetails = () => {
-  const { getPlantingsForPlot, getPlotById } = useData();
+  const { getPlotById } = useData();
   const [plotDetails, setPlotDetails] = useState({});
   const [error, setError] = useState(null);
   const { idPlot } = useParams();

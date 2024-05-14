@@ -170,7 +170,7 @@ const EditApplication = ({ onSubmit, application }) => {
             />
           </div>
           <div className="col-12">
-            <Button variant="dark" type="submit">
+            <Button variant="outline-warning" type="submit">
               Editar Aplicacion
             </Button>
           </div>

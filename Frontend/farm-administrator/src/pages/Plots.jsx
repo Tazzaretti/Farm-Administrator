@@ -18,7 +18,6 @@ const Plots = () => {
   const handleDelete = async (plotId) => {
     try {
       await deletePlot(plotId);
-      getPlots();
     } catch (error) {
       console.error('Error al eliminar plot:', error);
       setError('Error al eliminar plot');
@@ -85,7 +84,7 @@ const Plots = () => {
               <Card.Body>
                 <Card.Text>Tamaño: {plot.size}ha</Card.Text>
                 <Card.Text>Tipo de suelo: {getGroundTypeDescription(plot.groundType)}</Card.Text>
-                <Card.Text>Ubicacion geográfica: {plot.latitude},{plot.longitude}</Card.Text>
+                <Card.Text>Ubicación geográfica: {plot.latitude},{plot.longitude}</Card.Text>
                 <div className='row'>
                   <Button
                     type="button"
@@ -141,7 +140,7 @@ const Plots = () => {
             {/* Modal de edición dentro de cada tarjeta */}
             <Modal show={showEditModal} onHide={() => setShowEditModal(false)}>
               <Modal.Header closeButton>
-                <Modal.Title>Editar Plot</Modal.Title>
+                <Modal.Title>Editar Lote</Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <EditPlot plot={selectedPlotData} onSubmit={() => setShowEditModal(false)} />

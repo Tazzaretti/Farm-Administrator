@@ -8,6 +8,8 @@ const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const { user, isLogin } = useAuth();
   const [plots, setPlots] = useState([]);
+  const [machines, setMachines] = useState([]);
+  
 
   const getPlots = async () => {
     try {
@@ -85,7 +87,27 @@ export const DataProvider = ({ children }) => {
     }
   };
 
+  const getMachines = async () => {
+    try {
+      if (isLogin) {
+        const response = await axios.get(
+          `https://localhost:7182/api/Machinery/GetByUser/${user.idUser}`,
+          {
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+          }
+        );
+        console.log(response.data);
+        setMachines([...response.data]);
+      }
+    } catch (error) {
+      console.error('Error al obtener machines', error);
+    }
+  };
+
   useEffect(() => {
+    getMachines();
     getPlots();
   }, [isLogin, user]);
 
@@ -96,7 +118,9 @@ export const DataProvider = ({ children }) => {
     getPlantingsForPlot,
     getHarvestsForPlot,
     getApplicationsForPlot,
-    getPlotById, // Agrega la función getPlotById al contexto
+    getPlotById,
+    getMachines,
+    machines // Agrega la función getPlotById al contexto
     // Otras funciones y estados que quieras proporcionar
   };
 

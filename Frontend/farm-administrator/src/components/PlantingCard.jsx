@@ -24,9 +24,12 @@ const PlantingCard = ({ planting }) => {
 
   return (
     <Card className="card m-2 text-center">
-      <Card.Header>{planting.startDate ? planting.startDate.split('T')[0] : "No hay fecha de inicio"}</Card.Header>
+      <Card.Header>
+        <Card.Title>Fecha de inicio: {planting.startDate ? planting.startDate.split('T')[0] : "No hay fecha de inicio"}</Card.Title>
+      </Card.Header>
       <Card.Body>
-        <Card.Subtitle className="mb-2 text-muted">Temporada: {planting.season}</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted">Cultivo: {planting.crop}</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted">Tamaño: {planting.size}has</Card.Subtitle>
         <div className='row'>
           <Button 
             variant="outline-light"
@@ -51,18 +54,18 @@ const PlantingCard = ({ planting }) => {
           <Modal.Title>Detalles de la Siembra</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          <p><strong>Cultivo:</strong> {planting.crop}</p>
           <p><strong>Fecha de Inicio:</strong> {planting.startDate}</p>
+          <p><strong>Fecha de Fin:</strong> {planting.endDate}</p>
           <p><strong>Temporada:</strong> {planting.season}</p>
           <p><strong>Profundidad:</strong> {planting.deep}</p>
           <p><strong>Distancia:</strong> {planting.distance}</p>
           <p><strong>Tamaño:</strong> {planting.size}</p>
-          <p><strong>Fecha de Fin:</strong> {planting.endDate}</p>
           <p><strong>Costo:</strong> {planting.cost}</p>
-          <p><strong>ID del Lote:</strong> {planting.idPlot}</p>
           {/* Agrega más detalles según sea necesario */}
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="outline-warning" onClick={handleClose}>
             Cerrar
           </Button>
         </Modal.Footer>

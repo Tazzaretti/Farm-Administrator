@@ -6,7 +6,7 @@ import HarvestsList from '../components/HarvestsList';
 
 
 const Harvests = () => {
-  const { getPlantingsForPlot, getPlotById } = useData();
+  const { getPlotById } = useData();
   const [plotDetails, setPlotDetails] = useState({});
   const [error, setError] = useState(null);
   const { idPlot } = useParams();

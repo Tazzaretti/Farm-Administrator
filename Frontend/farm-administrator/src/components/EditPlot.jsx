@@ -60,7 +60,7 @@ const EditPlot = ({ onSubmit, plot }) => {
         </div>
         <div className="col-md-6">
           <label htmlFor="notes" className="form-label">
-            Descripcion
+            Descripción
           </label>
           <input
             type="text"
@@ -88,7 +88,7 @@ const EditPlot = ({ onSubmit, plot }) => {
         </div>
         <div className="col-md-6">
           <label htmlFor="size" className="form-label">
-            Tamanio
+            Tamaño
           </label>
           <input
             type="text"
@@ -143,7 +143,7 @@ const EditPlot = ({ onSubmit, plot }) => {
           </select>
         </div>
         <div className="col-12">
-          <Button variant="dark" type="submit">
+          <Button variant="outline-warning" type="submit">
                 Editar lote
           </Button>
         </div>

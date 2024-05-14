@@ -13,25 +13,29 @@ const Login = () => {
   const [validated, setValidated] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const form = e.currentTarget;
 
     if (form.checkValidity() === false) {
       e.stopPropagation();
-      e.preventDefault();
     } else {
       try {
-        await login(email, password);
-        console.log('después de enviar datos');
+        response = await login(email, password);
+        if (response == true){
+          navigate('/plots')
+        }
+        console.log('después de login');
       } catch (error) {
-        console.error('Error al iniciar sesion', error);
+        console.error('Error al loguear usuario', error);
       }
     }
-    setValidated(true); // Marca el formulario como validado
-    // Llamamos a la función de inicio de sesión con el email y la contraseña
-    
+
+    setValidated(true);
   };
-  
+
   const handleNavRegister = () =>{
     navigate('/register')
   }
@@ -47,7 +51,7 @@ const Login = () => {
       <Card style={{ width: '20rem' }}>
         <Card.Header as="h5">Login</Card.Header>
         <Card.Body>
-          <Form noValidate validated={validated} onSubmit={handleLogin}>
+          <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Group controlId="formBasicEmail" className="mb-3">
               <Form.Label>Email address</Form.Label>
               <Form.Control

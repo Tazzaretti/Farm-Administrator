@@ -4,6 +4,8 @@ import Table from 'react-bootstrap/Table';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useParams } from 'react-router-dom';
+import MaintenanceManagement from '../components/AddMaintenanceModal';
+
 
 const Maintenances = () => {
   const { idMachine } = useParams();
@@ -26,6 +28,7 @@ const Maintenances = () => {
 
   return (
     <div>
+      <MaintenanceManagement/>
       <Form>
         <Form.Group controlId="maintenances">
           <h1 className='text-center m-2 align-middle'>Mantenimientos</h1>
@@ -35,10 +38,10 @@ const Maintenances = () => {
         <thead>
           <tr className='text-center align-middle'>
             <th>Fecha</th>
-            <th>Descripcion</th>
-            <th>Horas maquina</th>
+            <th>Descripción</th>
             <th>Insumos</th>
             <th>Costo</th>
+            <th>Horas maquina</th>
           </tr>
         </thead>
         <tbody>
@@ -46,9 +49,9 @@ const Maintenances = () => {
             <tr key={index} className='text-center align-middle'>
               <td>{new Date(maintenance.date).toLocaleDateString()}</td>
               <td>{maintenance.description}</td>
-              <td>{maintenance.workedHours}</td>
               <td>{maintenance.sparePartsUsed}</td>
               <td>{maintenance.cost}</td>
+              <td>{maintenance.workedHours}</td>
             </tr>
           ))}
         </tbody>

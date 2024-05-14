@@ -28,7 +28,7 @@ const HarvestManagement = () => {
 
   return (
     <div>
-      <Button variant="outline-light" className='m-2' onClick={() => setShowAddHarvestModal(true)}>
+      <Button variant="outline-success" className='m-2' onClick={() => setShowAddHarvestModal(true)}>
         Agregar Cosecha
       </Button>
 
